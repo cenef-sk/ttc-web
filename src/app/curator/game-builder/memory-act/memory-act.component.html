@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <!-- <div *ngIf="!pairs.length" class="centered">
+    <h2>Zatiaľ nemáte definovaný žiadny pár</h2>
+  </div> -->
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Aktivita pexeso
+        </mat-panel-title>
+        <mat-panel-description>
+          Počet vytovrených párov {{activity.content.pairs.length}}/6
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-activity-pass [config]="activity.config"></app-activity-pass>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Časové obmedzenie (v sekundách)</mat-label>
+          <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Maximálny počet pokusov</mat-label>
+          <input matInput [formControl]="maxTriesFormControl" placeholder="Napr. 10" autocomplete="off">
+        </mat-form-field>
+      </form>
+    </mat-expansion-panel>
+    <app-pair [pair]="pair" [index]="index"
+    *ngFor="let pair of activity.content.pairs; let index = index"></app-pair>
+
+  </mat-accordion>
+
+  <div class="centered">
+    <button *ngIf="activity.content.pairs.length <6"
+    mat-raised-button color="primary" (click)="add()">Pridaj nový pár</button>
+  </div>
+</div>

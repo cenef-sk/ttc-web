@@ -1,0 +1,26 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Otvorená otázka č. {{index + 1}}
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- názov -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Otázka</mat-label>
+      <input matInput [formControl]="questionFormControl" placeholder="Napr. Kto je autorom obrazu?" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Vysvetlenie</mat-label>
+      <input matInput [formControl]="explanationFormControl" placeholder="Napr. Ake znaky majú obrazy daného autora" autocomplete="off">
+    </mat-form-field>
+  </form>
+
+  <div class="centered">
+    <img *ngIf="question.img" [src]="mediaUrl(question.img)" class="img-question">
+    <button *ngIf="!question.img" mat-raised-button color="primary" (click)="mediaSelection(question)">Zvoľte obrázok</button>
+  </div>
+
+</mat-expansion-panel>

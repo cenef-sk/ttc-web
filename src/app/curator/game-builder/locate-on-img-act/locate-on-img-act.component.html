@@ -1,0 +1,51 @@
+<div class="centered">
+  <form class="example-form" *ngIf="activity.content.asset">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Časové obmedzenie (v sekundách)</mat-label>
+      <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
+    </mat-form-field>
+  </form>
+  <app-activity-pass *ngIf="activity.content.asset" [config]="activity.config"></app-activity-pass>
+  <div *ngIf="activity.content.asset" class="circles">
+    <img *ngFor="let circle of circles; let index = index"
+    width="50px"
+    class="circle"
+    [src]="'/assets/circles/' + circles[index]"
+    (click)="selected(index)"
+    >
+  </div>
+  <div #canvasMap class = "canvas-img" id="canvas-img">
+    <button *ngIf="!activity.content.asset" mat-raised-button color="primary" (click)="mediaSelection()">Zvoľte obrázok</button>
+    <img *ngIf="activity.content.asset" #levelMapImg id="levelMapImg"  [src]="mediaUrl(activity.content.asset)" (load)="loaded()">
+    <ng-container *ngIf="activity.content.asset">
+      <div
+      *ngFor="let poi of activity.content.pois; let index = index"
+      [ngStyle]="{left: poi.position[0] + 'px', top: poi.position[1] + 'px'}"
+      class="canvas-pt"
+      cdkDragBoundary=".canvas-img"
+      cdkDrag
+      (cdkDragEnded)="dragEnd($event, poi)"
+      (mouseover)="poi.showDesc=true" (mouseout)="poi.showDesc=false"
+      >
+      <img
+      [src]="'/assets/circles/' + circles[activity.content.selectedPointer]"
+      width="60px" height="60px"
+      >
+      <div *ngIf="poi.showDesc" class="desc">
+        <span>{{poi.name}}</span>
+      </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="wrapper">
+    <mat-accordion class="example-headers-align">
+      <app-poi [poi]="poi" [index]="index"
+      *ngFor="let poi of activity.content.pois; let index = index">
+      </app-poi>
+    </mat-accordion>
+  </div>
+
+  <div *ngIf="activity.content.asset" class="centered">
+    <button mat-raised-button color="primary" (click)="add()">Pridaj nový bod</button>
+  </div>
+</div>

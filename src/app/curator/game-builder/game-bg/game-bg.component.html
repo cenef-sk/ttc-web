@@ -1,0 +1,40 @@
+<div class="centered">
+  <h2 *ngIf="bg.asset && !activities.length">Pridajte aktivitu, ktorú následne umiestnite do vašej mapy</h2>
+  <div *ngIf="bg.asset && activities.length" class="circles">
+    <img *ngFor="let circle of circles; let index = index"
+    width="50px"
+    class="circle"
+    [src]="'/assets/circles/' + circles[index]"
+    (click)="selected(index)"
+    >
+  </div>
+  <div #canvasMap class = "canvas-img" id="canvas-img">
+    <button *ngIf="!bg.asset" mat-raised-button color="primary" (click)="mediaSelection()">Zvoľte obrázok</button>
+    <span class="wizard" *ngIf="!bg.asset">
+      <app-wizard-button wizardType="img_selection"></app-wizard-button>
+    </span>
+    <img *ngIf="imgData" #levelMapImg id="levelMapImg"  [src]="imgData" (load)="loaded(levelMapImg)">
+    <!-- <canvas #levelMap class="levelMap" id="levelMap"  width="220" height="277">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas> -->
+    <ng-container *ngIf="bg.asset">
+      <div
+      *ngFor="let act of activities; let index = index"
+      [ngStyle]="{left: act.position[0] + 'px', top: act.position[1] + 'px'}"
+      class="canvas-pt"
+      cdkDragBoundary=".canvas-img"
+      cdkDrag
+      (cdkDragEnded)="dragEnd($event, act)"
+      (mouseover)="act.showDesc=true" (mouseout)="act.showDesc=false"
+      >
+      <img
+      [src]="'/assets/circles/' + circles[bg.selectedPointer]"
+      width="60px" height="60px"
+      >
+      <div *ngIf="act.showDesc" class="desc">
+        <span>{{act.name}}</span>
+      </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

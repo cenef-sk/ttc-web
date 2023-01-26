@@ -1,0 +1,25 @@
+#mynetwork {
+  width: 90%;
+  height: 500px;
+  border: 1px solid lightgray;
+  margin: 40px auto;
+  display: none;
+  position: relative;
+}
+
+#mynetwork.showChart {
+  display: block;
+}
+
+.chart {
+  width: 100%;
+}
+.chart img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.next {
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+<div *ngIf="cropping" class="cropping">
+  <h2 class="center">Vyberte zobrazovanú časť obrázka</h2>
+  <div *ngIf="base64Image" class="img-wrapper"
+  [style.width] = "wrapperWidthPx">
+    <image-cropper
+        [imageBase64]="base64Image"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / 1"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+    ></image-cropper>
+  </div>
+
+  <div *ngIf="croppedImage" class="img-wrapper"
+  [style.width] = "wrapperWidthPx">
+    <img [src]="croppedImage" width="100%" />
+  </div>
+
+  <p class="button">
+    <button mat-raised-button color="primary" (click)="cropDone()" name="button">Vybrať</button>
+  </p>
+
+  <!-- <img *ngIf="croppedImg" [src]="croppedImg"> -->
+</div>
+
+<ng-container *ngIf="!cropping">
+  <h2 class="center">Vyberte obrázok z vašej knižnice</h2>
+  <div class="container">
+    <div class="assetSelection"
+    *ngFor="let asset of assets" (click) = selected(asset)>
+      <img [src]="mediaUrl(asset)">
+      <span>{{(asset.metadata && asset.metadata.title)?asset.metadata.title:""}}</span>
+    </div>
+  </div>
+<ng-container>

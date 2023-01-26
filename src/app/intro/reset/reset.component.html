@@ -1,0 +1,20 @@
+<mat-card  class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{'reset.title' | translate}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'login.password' | translate}}</mat-label>
+        <!-- <input [(ngModel)]="password" type="password" class="form-control" placeholder="Vaše heslo" aria-label="Password" aria-describedby="basic-addon1"> -->
+        <input matInput type="password" [formControl]="passwordFormControl">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          {{'login.hint3' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="action">
+    <button mat-button (click)="reset()">{{'reset.button' | translate}}</button>
+  </mat-card-actions>
+</mat-card>

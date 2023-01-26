@@ -1,0 +1,79 @@
+{
+  "className": "STORY",
+  "id": "0",
+  "sections": [
+    {
+      "className": "SECTION",
+      "id": "1",
+      "tags": [],
+      "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+      "line": 0,
+      "name": "",
+      "subSections": [
+        {
+          "className": "SUBSECTION",
+          "id": "2",
+          "tags": [],
+          "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+          "line": 0,
+          "name": "",
+          "content": [
+            {
+              "className": "PARAGRAPH",
+              "id": "3",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+              "line": 2,
+              "content": [
+                {
+                  "className": "TEXT_CONTENT",
+                  "id": "4",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+                  "line": 2,
+                  "text": "Je nám ľúto ale tento interaktívny pomocník nie je teraz dostupný."
+                }
+              ]
+            },
+            {
+              "className": "BRANCH",
+              "id": "5",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+              "line": 3,
+              "options": [
+                {
+                  "className": "OPTION",
+                  "id": "7",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+                  "line": 3,
+                  "textOption": [
+                    {
+                      "className": "TEXT_CONTENT",
+                      "id": "6",
+                      "tags": [],
+                      "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+                      "line": 3,
+                      "text": "Rozumiem"
+                    }
+                  ],
+                  "textResponse": [],
+                  "condition": null,
+                  "jump": null
+                }
+              ]
+            },
+            {
+              "className": "END",
+              "id": "8",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/no_wizard.sslng",
+              "line": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

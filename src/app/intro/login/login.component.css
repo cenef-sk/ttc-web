@@ -1,0 +1,36 @@
+.wrapper {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+}
+.example-card {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 200px; */
+  margin-bottom: 100px;
+}
+
+.example-card .action {
+  text-align: center;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.google-wrapper {
+  text-align: center;
+  width: 100%;
+}
+.google-button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+}

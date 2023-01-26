@@ -1,0 +1,14 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Ako získať heslo pre vstup do aktivity</mat-label>
+    <input matInput [formControl]="inPassDescFormControl" placeholder="Napr. Koľko je okien na budove divadla?" autocomplete="off">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Heslo pre vstup do aktivity</mat-label>
+    <input matInput [formControl]="inPassFormControl" placeholder="Napr. prilba" autocomplete="off">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Získane heslo po úspešnej aktivite</mat-label>
+    <input matInput [formControl]="outPassFormControl" placeholder="Napr. H" autocomplete="off">
+  </mat-form-field>
+</form>

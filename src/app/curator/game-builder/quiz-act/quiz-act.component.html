@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <!-- <div *ngIf="!pairs.length" class="centered">
+    <h2>Zatiaľ nemáte definovaný žiadny pár</h2>
+  </div> -->
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Aktivita kvíz
+        </mat-panel-title>
+        <mat-panel-description>
+          Základné nastavenia aktivity
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-activity-pass [config]="activity.config"></app-activity-pass>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Časové obmedzenie (v sekundách)</mat-label>
+          <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
+        </mat-form-field>
+      </form>
+    </mat-expansion-panel>
+    <app-question [question]="question" [index]="index"
+    *ngFor="let question of activity.content.questions; let index = index"></app-question>
+
+  </mat-accordion>
+
+  <div class="centered">
+    <button mat-raised-button color="primary" (click)="add()">Pridaj novú otázku</button>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<mat-toolbar color="primary"  class="header">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+  (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{'curator.title' | translate}}</span>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">{{language}}</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item
+    *ngFor="let language of languages"
+    (click)="setLanguage(language)"
+    >{{language}}</button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-toolbar class="footer">
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+  (click)="openDialogAbout()">
+    {{'about' | translate}}
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+  (click)="openDialogTerms()">
+    {{'terms' | translate}}
+  </button>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list role="list" class="side-menu">
+      <mat-form-field appearance="outline" class="orgs-selection">
+        <mat-label>{{'curator.selectedOrg' | translate}}</mat-label>
+        <mat-select [(ngModel)]="selectedOrg" name="org">
+          <mat-option *ngFor="let org of orgs" (click)="changeOrg(org._id)" [value]="org._id">
+            {{org.name}}
+          </mat-option>
+          <mat-option value="create" (click)="create()">
+            <mat-icon>add</mat-icon> Vytvoriť novú organizáciu
+          </mat-option>
+          <mat-option value="join" (click)="join()">
+            <mat-icon>link</mat-icon> Požiadať o členstvo v existujúcej
+          </mat-option>
+          <mat-option value="manage" (click)="manageOrgs()">
+            <mat-icon>settings</mat-icon> Správa organizácii
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <a mat-list-item [routerLink]="['/curator']">
+    		<span matLine>{{'curator.home' | translate}}</span>
+        <mat-icon>home</mat-icon>
+      </a>
+      <a *ngIf="globals.org" mat-list-item [routerLink]="['/curator/media-library']">
+    		<span matLine>{{'curator.library' | translate}}</span>
+        <mat-icon>perm_media</mat-icon>
+      </a>
+      <a *ngIf="globals.org" mat-list-item [routerLink]="['/curator/games']">
+    		<span matLine>{{'curator.games' | translate}}</span>
+        <mat-icon>casino</mat-icon>
+      </a>
+      <a *ngIf="globals.org" mat-list-item [routerLink]="['/curator/members']">
+    		<span matLine>{{'curator.members' | translate}}</span>
+        <mat-icon>groups</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/curator/profile']">
+    		<span matLine>{{'curator.profile' | translate}}</span>
+        <mat-icon>person</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/logout']">
+    		<span matLine>{{'curator.logout' | translate}}</span>
+        <mat-icon>directions_run</mat-icon>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

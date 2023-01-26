@@ -1,0 +1,171 @@
+{
+  "className": "STORY",
+  "id": "0",
+  "sections": [
+    {
+      "className": "SECTION",
+      "id": "1",
+      "tags": [],
+      "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+      "line": 0,
+      "name": "",
+      "subSections": [
+        {
+          "className": "SUBSECTION",
+          "id": "2",
+          "tags": [],
+          "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+          "line": 0,
+          "name": "",
+          "content": [
+            {
+              "className": "PARAGRAPH",
+              "id": "3",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 2,
+              "content": [
+                {
+                  "className": "TEXT_CONTENT",
+                  "id": "4",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                  "line": 2,
+                  "text": "Áno po kliknutí na ikonu sa vám zobrazí pomocník, s množstvom zaujímavých metodických odporúčaní."
+                }
+              ]
+            },
+            {
+              "className": "BRANCH",
+              "id": "5",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 3,
+              "options": [
+                {
+                  "className": "OPTION",
+                  "id": "7",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                  "line": 3,
+                  "textOption": [
+                    {
+                      "className": "TEXT_CONTENT",
+                      "id": "6",
+                      "tags": [],
+                      "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                      "line": 3,
+                      "text": "Pokračovať"
+                    }
+                  ],
+                  "textResponse": [],
+                  "condition": null,
+                  "jump": null
+                }
+              ]
+            },
+            {
+              "className": "PARAGRAPH",
+              "id": "8",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 4,
+              "content": [
+                {
+                  "className": "TEXT_CONTENT",
+                  "id": "9",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                  "line": 4,
+                  "text": "Ak ešte nie ste členom žiadnej organizácie kliknite v ľavom hornom rohu na rolovacie menu \"Zvolená organizácia\". Kde môžete vytvoriť novú organizáciu alebo sa stať členom už existujúcej organizácie."
+                }
+              ]
+            },
+            {
+              "className": "BRANCH",
+              "id": "10",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 5,
+              "options": [
+                {
+                  "className": "OPTION",
+                  "id": "12",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                  "line": 5,
+                  "textOption": [
+                    {
+                      "className": "TEXT_CONTENT",
+                      "id": "11",
+                      "tags": [],
+                      "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                      "line": 5,
+                      "text": "Pokračovať"
+                    }
+                  ],
+                  "textResponse": [],
+                  "condition": null,
+                  "jump": null
+                }
+              ]
+            },
+            {
+              "className": "PARAGRAPH",
+              "id": "13",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 6,
+              "content": [
+                {
+                  "className": "TEXT_CONTENT",
+                  "id": "14",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                  "line": 6,
+                  "text": "Pomocou tohto menu môžete prepínať medzi organizáciami, v ktorých vytvárate obsah."
+                }
+              ]
+            },
+            {
+              "className": "BRANCH",
+              "id": "15",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 7,
+              "options": [
+                {
+                  "className": "OPTION",
+                  "id": "17",
+                  "tags": [],
+                  "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                  "line": 7,
+                  "textOption": [
+                    {
+                      "className": "TEXT_CONTENT",
+                      "id": "16",
+                      "tags": [],
+                      "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+                      "line": 7,
+                      "text": "Pokračovať"
+                    }
+                  ],
+                  "textResponse": [],
+                  "condition": null,
+                  "jump": null
+                }
+              ]
+            },
+            {
+              "className": "END",
+              "id": "18",
+              "tags": [],
+              "filePath": "/home/psmatana/Documents/Projects/TouchTheCulture/ttc-web/src/wizard/sk/welcome.sslng",
+              "line": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Aktivita časová os
+      </mat-panel-title>
+      <mat-panel-description>
+        Základné nastavenia aktivity
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="centered">
+      <app-activity-pass [config]="activity.config"></app-activity-pass>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Popis úlohy</mat-label>
+          <input matInput [formControl]="titleFormControl" placeholder="Napr. Usporiadajte chronologicky autorove diela." autocomplete="off">
+          <mat-error *ngIf="titleFormControl.hasError('required')">
+            Popis úlohy sa <strong>vyžaduje</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Vysvetlenie</mat-label>
+          <input matInput [formControl]="explanationFormControl" placeholder="Napr. Ake znaky majú obrazy daného autora" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Časové obmedzenie (v sekundách)</mat-label>
+          <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-expansion-panel>
+</div>
+<div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let item of activity.content.items; let index = index" cdkDrag>
+    <button *ngIf="!item" mat-raised-button color="primary" (click)="mediaSelection(index)">Zvoľte obrázok</button>
+    <img *ngIf="item" class="img-item" [src]="mediaUrl(item)">
+  </div>
+</div>

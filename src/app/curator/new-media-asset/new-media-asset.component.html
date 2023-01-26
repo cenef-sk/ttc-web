@@ -1,0 +1,60 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Nahrávanie nového obsahu</mat-card-title>
+    <mat-card-subtitle>Vložte digitálnu kópiu umeleckého diela</mat-card-subtitle>
+  </mat-card-header>
+  <div class="preview">
+    <img *ngIf="imgSrc" mat-card-image [src]="imgSrc" alt="Artwork">
+    <div *ngIf="imgSrc" class="delete">
+      <button mat-icon-button
+      (click)="deletePreview()" aria-label="Example icon button with a home icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="center">
+    <input #mediaInput hidden="true" type="file" onclick="this.value=null" (change)="fileSelected($event)" accept=".jpg,.png,.jpeg"/>
+    <button *ngIf="!imgSrc" class="upload-button" mat-flat-button color="primary" (click)="mediaInput.click()">Nahraj súbor</button>
+  </div>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Názov diela</mat-label>
+        <input matInput [formControl]="titleFormControl" placeholder="Napr. Posledná večera" autocomplete="off">
+        <mat-error *ngIf="titleFormControl.hasError('required')">
+          Názov sa <strong>vyžaduje</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Popis diela</mat-label>
+        <input matInput [formControl]="descriptionFormControl" placeholder="Napr. čo dielo vyjadruje, prečo vzniklo, ..." autocomplete="off">
+      </mat-form-field>
+      <mat-form-field class="example-full-width"  appearance="fill">
+        <mat-label>Autor diela</mat-label>
+        <input matInput [formControl]="titleFormControl" placeholder="Napr. Leonardo da Vinci" autocomplete="off">
+        <mat-error *ngIf="authorFormControl.hasError('required')">
+          Autor sa <strong>vyžaduje</strong>
+        </mat-error>
+      </mat-form-field>
+      <hr>
+      <mat-checkbox class="example-margin" [checked]="knownLicense" (change)="knownLicense = !knownLicense">Viem akú ma dielo licenciu</mat-checkbox>
+      <br>
+      <b *ngIf="!knownLicense">Toto dielo môžete používať len na súkromné účely a v neverejných hrách</b>
+      <!-- <mat-checkbox  class="example-margin" [checked]="privateUse" (change)="privateUse = !privateUse">Len na súkromné účely</mat-checkbox> -->
+      <mat-form-field *ngIf="knownLicense" class="example-full-width"  appearance="fill">
+        <mat-label>Copyright</mat-label>
+        <input matInput [formControl]="copyrightFormControl" placeholder="Napr. ©2022 Jane Doe, All Rights Reserved." autocomplete="off">
+      </mat-form-field>
+      <mat-form-field *ngIf="knownLicense" class="example-full-width"  appearance="fill">
+        <mat-label>Attribution</mat-label>
+        <input matInput [formControl]="attributionFormControl" placeholder="Napr. použité zo stránky cenef.sk" autocomplete="off">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="save()"
+    [disabled] = "!file"
+    >Uložiť</button>
+    <button mat-button (click)="cancel()">Zrušiť</button>
+  </mat-card-actions>
+</mat-card>

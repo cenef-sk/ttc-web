@@ -1,0 +1,27 @@
+<mat-card  class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{'teacher.profileData.title'|translate}} <b>{{globals.user.name}}</b></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" (ngSubmit)="change()">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'teacher.profileData.old' | translate}}</mat-label>
+        <input matInput type="password" [formControl]="oldPasswordFormControl">
+        <mat-error *ngIf="oldPasswordFormControl.hasError('required')">
+          {{'teacher.profileData.hint1' | translate}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'teacher.profileData.new' | translate}}</mat-label>
+        <input matInput type="password" [formControl]="newPasswordFormControl">
+        <mat-error *ngIf="newPasswordFormControl.hasError('required')">
+          {{'teacher.profileData.hint2' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="action">
+    <button mat-button
+    (click)="change()">{{'teacher.profileData.save' | translate}}</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,51 @@
+<mat-card  class="example-card">
+  <mat-card-header>
+    <mat-card-title>Registrácia kurátor</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'registration.name' | translate}}</mat-label>
+        <!-- <input [(ngModel)]="name" type="text" class="form-control" placeholder="Váše meno verejne viditelne" aria-label="FullName" aria-describedby="basic-addon1"> -->
+        <input matInput [formControl]="nameFormControl" [placeholder]="'Vaše meno'">
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          {{'registration.hint1' | translate}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'login.email' | translate}}</mat-label>
+        <!-- <input [(ngModel)]="email" type="text" class="form-control" placeholder="Váš email" aria-label="Username" aria-describedby="basic-addon1"> -->
+        <input matInput [formControl]="emailFormControl" [placeholder]="'login.example' | translate">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          {{'login.hint1' | translate}}
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          {{'login.hint2' | translate}}
+        </mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="error1">
+        {{'registration.hint2' | translate}}
+      </mat-error>
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'login.password' | translate}}</mat-label>
+        <!-- <input [(ngModel)]="password" type="password" class="form-control" placeholder="Vaše heslo" aria-label="Password" aria-describedby="basic-addon1"> -->
+        <input matInput type="password" [formControl]="passwordFormControl">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          {{'login.hint3' | translate}}
+        </mat-error>
+      </mat-form-field>
+      <!-- <mat-form-field class="example-full-width">
+        <mat-label>{{'login.password' | translate}}</mat-label> -->
+        <!-- <input type="checkbox" id="terms">
+        <label for="terms">Suhlasim s podmienkami pouzivania.</label> -->
+        <!-- <input matInput type="password" [formControl]="passwordFormControl"> -->
+        <!-- <mat-error *ngIf="passwordFormControl.hasError('required')">
+          {{'login.hint3' | translate}}
+        </mat-error>
+      </mat-form-field> -->
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="action">
+    <button mat-button (click)="register()">{{'registration.button' | translate}}</button>
+  </mat-card-actions>
+</mat-card>

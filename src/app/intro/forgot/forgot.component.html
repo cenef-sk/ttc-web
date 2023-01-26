@@ -1,0 +1,23 @@
+<mat-card  class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{'forgot.title' | translate}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{'login.email' | translate}}</mat-label>
+        <!-- <input [(ngModel)]="email" type="text" class="form-control" placeholder="Váš email" aria-label="Username" aria-describedby="basic-addon1"> -->
+        <input matInput [formControl]="emailFormControl" [placeholder]="'login.example' | translate">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          {{'login.hint1' | translate}}
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          {{'login.hint2' | translate}}
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="action">
+    <button mat-button (click)="forgot()">{{'forgot.button' | translate}}</button>
+  </mat-card-actions>
+</mat-card>

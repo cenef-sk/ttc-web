@@ -1,0 +1,36 @@
+<div *ngIf="!assets.length" class="empty-library">
+  <h1>Momentálne nemáte dostupné žiadné položky v Mediálnej knižnici. Kliknite na tlačidlo + a vložte nový obsah.</h1>
+</div>
+<div class="container">
+  <ng-container class="container-asset" *ngFor="let asset of assets">
+    <mat-card class="example-card">
+      <mat-card-title class="card-header"
+      title="{{asset.metadata.title}}"
+      >{{asset.metadata.title}}</mat-card-title>
+      <div class="cover-img"
+      [ngStyle]="{backgroundImage: bgMmediaUrl(asset)}">
+        <div class="cover-view">
+          <button mat-raised-button color="primary" disabled>Zobraziť</button>
+          <!-- <button mat-raised-button color="primary"  (click)="view(asset)">Zobraziť</button> -->
+        </div>
+      </div>
+      <mat-card-content class="card-content">
+        <p>
+          {{asset.metadata.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-button (click)="edit(asset)">Upraviť</button> -->
+        <button mat-button disabled>Upraviť</button>
+        <button mat-button (click)="delete(asset)">Odstrániť</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>
+<div class="add-asset">
+  <button mat-fab color="primary"
+  (click)="add()"
+  aria-label="Example icon button with a delete icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

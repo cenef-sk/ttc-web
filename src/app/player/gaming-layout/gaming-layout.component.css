@@ -1,0 +1,40 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.clickable {
+  cursor: pointer;
+
+}
+
+.erasmus {
+  height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .erasmus {
+    display: none;
+  }
+
+}
+
+.logo {
+  width: 45px;
+  margin-right: 20px;
+}

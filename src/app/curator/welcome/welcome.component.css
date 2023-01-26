@@ -1,0 +1,24 @@
+.teacher-welcome {
+  margin: 90px;
+  margin-top: 60px;
+  padding: 80px;
+}
+.teacher-welcome h1 {
+  text-align: center;
+}
+
+.t-intro {
+  font-size: 25px;
+}
+.guide {
+  width: 100%;
+}
+
+.wizard {
+  text-align: right;
+  position: relative;
+  top: -50px;
+  /* float: right; */
+  display: inline;
+  spacing-top: 20px;
+}

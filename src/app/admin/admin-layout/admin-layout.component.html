@@ -1,0 +1,68 @@
+<mat-toolbar color="primary"  class="header">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+  (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Admin Sekcia</span>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<mat-toolbar class="footer">
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+  (click)="openDialogAbout()">
+    {{'about' | translate}}
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+  (click)="openDialogTerms()">
+    {{'terms' | translate}}
+  </button>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list role="list" class="side-menu">
+      <a mat-list-item [routerLink]="['/admin']">
+    		<span matLine>Home</span>
+        <mat-icon>home</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/admin/profile']">
+    		<span matLine>Profile</span>
+        <mat-icon>person</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/admin/users']">
+    		<span matLine>Users Management</span>
+        <mat-icon>people</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/admin/themes']">
+        <span matLine>Themes</span>
+        <mat-icon>receipt</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/admin/topics']">
+    		<span matLine>Topic Management</span>
+        <mat-icon>forum</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/admin/trials']">
+    		<span matLine>Trials Management</span>
+        <mat-icon>science</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/teacher']">
+    		<span matLine>Teacher Mode</span>
+        <mat-icon>menu_book</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/student']">
+    		<span matLine>Student Mode</span>
+        <mat-icon>school</mat-icon>
+      </a>
+      <a mat-list-item [routerLink]="['/logout']">
+    		<span matLine>Logout</span>
+        <mat-icon>directions_run</mat-icon>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

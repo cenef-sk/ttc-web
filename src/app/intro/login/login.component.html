@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <mat-card  class="example-card mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>{{'login.title' | translate}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" (keyup.enter)="login()">
+        <mat-form-field class="example-full-width">
+          <mat-label>{{'login.email' | translate}}</mat-label>
+          <input matInput [formControl]="emailFormControl" [placeholder]="'login.example' | translate">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            {{'login.hint1' | translate}}
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            {{'login.hint2' | translate}}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>{{'login.password' | translate}}</mat-label>
+          <input matInput type="password" [formControl]="passwordFormControl">
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            {{'login.hint3' | translate}}
+          </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="error">
+          {{'login.hint4' | translate}}
+        </mat-error>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="action">
+      <button mat-button
+      (click)="login()">{{'login.enter' | translate}}</button>
+      <button mat-button color="primary"
+      (click)="register()">{{'login.register' | translate}}</button>
+      <button mat-button color="warn"
+      (click)="forgot()">{{'login.forgot' | translate}}</button>
+    </mat-card-actions>
+    <!-- <mat-divider></mat-divider>
+    <mat-card-header>
+      <mat-card-title> Prihlásiť sa pomocou google</mat-card-title>
+    </mat-card-header> -->
+    <!-- <mat-card-content>
+      <div id="gButton"></div> -->
+      <!-- <div class="google-wrapper">
+        <div class="g-signin2 google-button" data-onsuccess="onSignIn"></div>
+      </div> -->
+    <!-- </mat-card-content>
+    <button (click)="logout()">LOGOUT</button> -->
+  </mat-card>
+</div>

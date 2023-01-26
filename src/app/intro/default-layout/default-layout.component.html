@@ -1,0 +1,30 @@
+<mat-toolbar color="primary"  class="header mat-elevation-z10">
+  <img src="/assets/TTC_logo.png" class="logo">
+  <span class="clickable" (click)="home()">{{ 'TouchTheCulture' | translate }}</span>
+  <span class="spacer"></span>
+  <button *ngIf="sharedService.lngSelector" mat-button [matMenuTriggerFor]="menu">{{language}}</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item
+    *ngFor="let language of languages"
+    (click)="setLanguage(language)"
+    >{{language}}</button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-toolbar class="footer">
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon about" aria-label="Example icon-button with share icon"
+  (click)="openDialogAbout()">
+    {{'about' | translate}}
+  </button>
+  <span class="spacer"></span>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+  (click)="openDialogTerms()">
+    {{'terms' | translate}}
+  </button>
+  <span class="spacer"></span>
+  <img class="erasmus" src="/assets/logo_erasmus.png"/>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

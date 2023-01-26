@@ -1,0 +1,31 @@
+<div class="wrapper">
+<table mat-table [dataSource]="orgs" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Názov </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Popis organizácie </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <!-- Join Column -->
+  <ng-container matColumnDef="join">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button *ngIf="!(isMember(element) || isPending(element))" (click)="join(element)" color="primary">Požiadať o členstvo</button>
+      <button mat-raised-button *ngIf="isPending(element)" (click)="revoke(element)" color="primary">Zrušiť žiadosť</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>

@@ -1,0 +1,58 @@
+.canvas-img {
+  position: relative;
+  /* margin: auto; */
+  /* width: 220px; */
+  display: inline-block;
+}
+.canvas-pt {
+  position: absolute;
+  cursor: move;
+}
+.levelMap {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#levelMapImg {
+  /* IMPORTANT NUMBER FOR RATIO OF SAVING POI */
+  height: 500px;
+}
+.centered {
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+.circle {
+  cursor: pointer;
+}
+.circles {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.desc {
+  color: black;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  spacing: 10px;
+  padding: 20px;
+  background-color: silver;
+  width: 200px;
+  border-radius: 5px;
+  border: 2px dotted grey;
+  text-align: center;
+}
+.desc span {
+  width: 100%;
+}
+
+.wizard {
+  text-align: right;
+  position: relative;
+  top: -50px;
+  right: -100px;
+  /* float: right; */
+  /* display: inline-inline-block; */
+  spacing-top: 20px;
+}

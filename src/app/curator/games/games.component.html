@@ -1,0 +1,69 @@
+<div class="wrapper">
+<table mat-table [dataSource]="games" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Názov </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Role Column -->
+  <ng-container matColumnDef="published">
+    <th mat-header-cell *matHeaderCellDef> Publikovaná </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon *ngIf="element.published">visibility</mat-icon>
+      <mat-icon *ngIf="!element.published">visibility_off</mat-icon>
+    </td>
+  </ng-container>
+
+  <!-- Requests Column -->
+  <ng-container matColumnDef="rating">
+    <th mat-header-cell *matHeaderCellDef> Hodnotenie </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon>star</mat-icon>
+      <mat-icon>star</mat-icon>
+      <mat-icon>star</mat-icon>
+      <mat-icon>star</mat-icon>
+      <!-- <button *ngIf="!element.role" mat-raised-button color="primary">Prijať za člena</button> -->
+    </td>
+  </ng-container>
+
+  <!-- Requests Column -->
+  <ng-container matColumnDef="difficulty">
+    <th mat-header-cell *matHeaderCellDef> Obtiažnosť </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon>school</mat-icon>
+      <mat-icon *ngIf="element.difficulty && element.difficulty>0">school</mat-icon>
+      <mat-icon *ngIf="element.difficulty && element.difficulty>1">school</mat-icon>
+    </td>
+  </ng-container>
+
+  <!-- Requests Column -->
+  <ng-container matColumnDef="ageRestriction">
+    <th mat-header-cell *matHeaderCellDef> Veková prístupnosť </th>
+    <td mat-cell *matCellDef="let element">
+      {{element.ageRestriction}}
+    </td>
+  </ng-container>
+
+  <!-- View Column -->
+  <ng-container matColumnDef="view">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element">
+      <button  mat-raised-button color="primary"
+      (click)="editGame(element)">Zobraziť</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+<div class="centered">
+  <button  mat-raised-button color="primary"
+  (click)="newGame()">Vytvoriť novú hru</button>
+</div>
+</div>
