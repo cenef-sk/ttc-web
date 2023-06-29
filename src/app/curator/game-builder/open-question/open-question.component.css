@@ -19,3 +19,24 @@
 .example-full-width {
   width: 100%;
 }
+
+.wizard {
+  position: absolute;
+  margin-left: 10px;
+}
+
+.action-button {
+  margin-left: 25px;
+  margin-right: 5px;
+}
+.wizard-btn {
+  display: inline-block;
+}
+
+.wizard-act {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+  transform: scale(0.7);
+  top: -5px;
+}

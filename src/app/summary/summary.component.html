@@ -1,0 +1,41 @@
+<!-- Pocet stiahnuti hier
+Pocet hracov
+Kto kolko hral
+Ktore hry hral
+Odpovede na otazky -->
+<div class="wrapper">
+  <h1>{{'stats.title' | translate}}</h1>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<div class="tabData">
+  <table mat-table [dataSource]="analytics" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> {{'stats.nr' | translate}}No. </th>
+      <td mat-cell *matCellDef="let element; let i = index"> {{i}} </td>
+    </ng-container>
+
+    <!-- downloadId Column -->
+    <ng-container matColumnDef="downloadId">
+      <th mat-header-cell *matHeaderCellDef> {{'stats.id' | translate}}Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.downloadId}} </td>
+    </ng-container>
+
+    <!-- Answers Column -->
+    <ng-container matColumnDef="answers">
+      <th mat-header-cell *matHeaderCellDef> {{'stats.answer' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.data.data.data}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+</div>

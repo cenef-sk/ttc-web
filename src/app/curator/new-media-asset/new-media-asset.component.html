@@ -1,9 +1,16 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Nahrávanie nového obsahu</mat-card-title>
-    <mat-card-subtitle>Vložte digitálnu kópiu umeleckého diela</mat-card-subtitle>
+    <mat-card-title>{{'media.new' | translate}}</mat-card-title>
+    <mat-card-subtitle>{{'media.digital' | translate}}</mat-card-subtitle>
   </mat-card-header>
   <div class="preview">
+    <img *ngIf="mediaContent && !imgSrc" mat-card-image [src]="mediaUrl()" alt="Artwork">
+    <div *ngIf="mediaContent && !imgSrc" class="delete">
+      <button mat-icon-button
+      (click)="mediaInput.click()" aria-label="Example icon button with a home icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
     <img *ngIf="imgSrc" mat-card-image [src]="imgSrc" alt="Artwork">
     <div *ngIf="imgSrc" class="delete">
       <button mat-icon-button
@@ -14,47 +21,47 @@
   </div>
   <div class="center">
     <input #mediaInput hidden="true" type="file" onclick="this.value=null" (change)="fileSelected($event)" accept=".jpg,.png,.jpeg"/>
-    <button *ngIf="!imgSrc" class="upload-button" mat-flat-button color="primary" (click)="mediaInput.click()">Nahraj súbor</button>
+    <button *ngIf="!imgSrc && !mediaContent" class="upload-button" mat-flat-button color="primary" (click)="mediaInput.click()">{{'media.loadFile' | translate}}</button>
   </div>
   <mat-card-content>
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Názov diela</mat-label>
-        <input matInput [formControl]="titleFormControl" placeholder="Napr. Posledná večera" autocomplete="off">
+        <mat-label>{{'media.title' | translate}}</mat-label>
+        <input matInput [formControl]="titleFormControl" placeholder="{{'media.titlePlaceholder' | translate}}" autocomplete="off">
         <mat-error *ngIf="titleFormControl.hasError('required')">
-          Názov sa <strong>vyžaduje</strong>
+          {{'media.titleReq' | translate}}
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Popis diela</mat-label>
-        <input matInput [formControl]="descriptionFormControl" placeholder="Napr. čo dielo vyjadruje, prečo vzniklo, ..." autocomplete="off">
+        <mat-label>{{'media.desc' | translate}}</mat-label>
+        <input matInput [formControl]="descriptionFormControl" placeholder="{{'media.descPlaceholder' | translate}}" autocomplete="off">
       </mat-form-field>
       <mat-form-field class="example-full-width"  appearance="fill">
-        <mat-label>Autor diela</mat-label>
-        <input matInput [formControl]="titleFormControl" placeholder="Napr. Leonardo da Vinci" autocomplete="off">
+        <mat-label>{{'media.author' | translate}}</mat-label>
+        <input matInput [formControl]="authorFormControl" placeholder="{{'media.authorPlaceholder' | translate}}" autocomplete="off">
         <mat-error *ngIf="authorFormControl.hasError('required')">
-          Autor sa <strong>vyžaduje</strong>
+          {{'media.authorReq' | translate}}
         </mat-error>
       </mat-form-field>
       <hr>
-      <mat-checkbox class="example-margin" [checked]="knownLicense" (change)="knownLicense = !knownLicense">Viem akú ma dielo licenciu</mat-checkbox>
+      <mat-checkbox class="example-margin" [checked]="knownLicense" (change)="knownLicense = !knownLicense">{{'media.knownLicense' | translate}}</mat-checkbox>
       <br>
-      <b *ngIf="!knownLicense">Toto dielo môžete používať len na súkromné účely a v neverejných hrách</b>
+      <b *ngIf="!knownLicense">{{'media.private' | translate}}</b>
       <!-- <mat-checkbox  class="example-margin" [checked]="privateUse" (change)="privateUse = !privateUse">Len na súkromné účely</mat-checkbox> -->
       <mat-form-field *ngIf="knownLicense" class="example-full-width"  appearance="fill">
-        <mat-label>Copyright</mat-label>
-        <input matInput [formControl]="copyrightFormControl" placeholder="Napr. ©2022 Jane Doe, All Rights Reserved." autocomplete="off">
+        <mat-label>{{'media.copyright' | translate}}</mat-label>
+        <input matInput [formControl]="copyrightFormControl" placeholder="{{'media.copyrightPlaceholder' | translate}}" autocomplete="off">
       </mat-form-field>
       <mat-form-field *ngIf="knownLicense" class="example-full-width"  appearance="fill">
-        <mat-label>Attribution</mat-label>
-        <input matInput [formControl]="attributionFormControl" placeholder="Napr. použité zo stránky cenef.sk" autocomplete="off">
+        <mat-label>{{'media.attribution' | translate}}</mat-label>
+        <input matInput [formControl]="attributionFormControl" placeholder="{{'media.attributionPlaceholder' | translate}}" autocomplete="off">
       </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="save()"
-    [disabled] = "!file"
-    >Uložiť</button>
-    <button mat-button (click)="cancel()">Zrušiť</button>
+    [disabled] = "!file && !mediaContent"
+    >{{'media.save' | translate}}</button>
+    <button mat-button (click)="cancel()">{{'media.cancel' | translate}}</button>
   </mat-card-actions>
 </mat-card>

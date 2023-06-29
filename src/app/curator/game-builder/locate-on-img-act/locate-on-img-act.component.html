@@ -1,9 +1,12 @@
 <div class="centered">
   <form class="example-form" *ngIf="activity.content.asset">
-    <mat-form-field class="example-full-width" appearance="fill">
+    <!-- <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Časové obmedzenie (v sekundách)</mat-label>
       <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
-    </mat-form-field>
+    </mat-form-field> -->
+    <!-- <span class="wizard">
+      <app-wizard-button wizardType="find_on_image_time"></app-wizard-button>
+    </span> -->
   </form>
   <app-activity-pass *ngIf="activity.content.asset" [config]="activity.config"></app-activity-pass>
   <div *ngIf="activity.content.asset" class="circles">
@@ -15,8 +18,19 @@
     >
   </div>
   <div #canvasMap class = "canvas-img" id="canvas-img">
-    <button *ngIf="!activity.content.asset" mat-raised-button color="primary" (click)="mediaSelection()">Zvoľte obrázok</button>
-    <img *ngIf="activity.content.asset" #levelMapImg id="levelMapImg"  [src]="mediaUrl(activity.content.asset)" (load)="loaded()">
+    <button *ngIf="!activity.content.asset" class="action-button" mat-raised-button color="primary" (click)="mediaSelection()">{{'games.selImg' | translate}}</button>
+    <span *ngIf="!activity.content.asset" class="wizard-btn">
+      <app-wizard-button wizardType="find_on_image"></app-wizard-button>
+    </span>
+    <div class="preview">
+      <img *ngIf="activity.content.asset" #levelMapImg id="levelMapImg"  [src]="mediaUrl(activity.content.asset)" (load)="loaded()">
+      <div *ngIf="activity.content.asset" class="remove">
+        <button  mat-icon-button
+        (click)="removeMedia()" aria-label="Example icon button with a home icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
     <ng-container *ngIf="activity.content.asset">
       <div
       *ngFor="let poi of activity.content.pois; let index = index"
@@ -31,6 +45,9 @@
       [src]="'/assets/circles/' + circles[activity.content.selectedPointer]"
       width="60px" height="60px"
       >
+      <div class="num">
+        <h3>{{index + 1}}</h3>
+      </div>
       <div *ngIf="poi.showDesc" class="desc">
         <span>{{poi.name}}</span>
       </div>
@@ -40,12 +57,13 @@
   <div class="wrapper">
     <mat-accordion class="example-headers-align">
       <app-poi [poi]="poi" [index]="index"
+      (removeEvent)="remove($event)"
       *ngFor="let poi of activity.content.pois; let index = index">
       </app-poi>
     </mat-accordion>
   </div>
 
   <div *ngIf="activity.content.asset" class="centered">
-    <button mat-raised-button color="primary" (click)="add()">Pridaj nový bod</button>
+    <button mat-raised-button color="primary" (click)="add()">{{'games.newPoi' | translate}}</button>
   </div>
 </div>

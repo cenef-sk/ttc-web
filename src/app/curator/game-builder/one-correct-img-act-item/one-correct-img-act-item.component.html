@@ -1,0 +1,63 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{'games.questionNr' | translate}} {{index + 1}}
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- názov -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{'games.question' | translate}}</mat-label>
+      <input matInput [formControl]="questionFormControl" placeholder="{{'games.questionPlaceholder2' | translate}}" autocomplete="off">
+    </mat-form-field>    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{'games.expl' | translate}}</mat-label>
+      <input matInput [formControl]="explanationFormControl" placeholder="{{'games.explPlaceholder' | translate}}" autocomplete="off">
+    </mat-form-field>
+    <span class="wizard">
+      <app-wizard-button wizardType="explanation"></app-wizard-button>
+    </span>
+  </form>
+
+  <div class="centered">
+    <div class="preview">
+      <img *ngIf="croppedImage1" [src]="croppedImage1" class="img-pair">
+      <div *ngIf="croppedImage1" class="remove">
+        <button  mat-icon-button
+        (click)="removeMedia(0)" aria-label="Example icon button with a home icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <button *ngIf="!question.correct.img" mat-raised-button color="primary" (click)="mediaSelection(question, 0)">{{'games.selCorrectImg' | translate}}</button>
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{'games.correctOne' | translate}}</mat-label>
+      <input matInput [formControl]="item1FormControl" placeholder="{{'games.correctOnePlaceholder' | translate}}" autocomplete="off">
+    </mat-form-field>
+  </form>
+  <div class="centered">
+    <div class="preview">
+      <img *ngIf="croppedImage2" [src]="croppedImage2" class="img-pair">
+      <div *ngIf="croppedImage2" class="remove">
+        <button  mat-icon-button
+        (click)="removeMedia(1)" aria-label="Example icon button with a home icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <button *ngIf="!question.wrong.img" mat-raised-button color="primary" (click)="mediaSelection(question, 1)">{{'games.selWrongImg' | translate}}</button>
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{'games.incorrectOne' | translate}}</mat-label>
+      <input matInput [formControl]="item2FormControl" placeholder="{{'games.incorrectOnePlaceholder' | translate}}" autocomplete="off">
+    </mat-form-field>
+  </form>
+
+  <mat-action-row>
+    <button mat-button color="primary" (click)="remove(index)"><mat-icon>delete</mat-icon> {{'act.remove' | translate}} </button>
+  </mat-action-row>
+</mat-expansion-panel>

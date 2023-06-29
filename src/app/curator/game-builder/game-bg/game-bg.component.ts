@@ -204,5 +204,9 @@ export class GameBgComponent implements OnInit {
       return "/assets/imagenotavailable_200.png"
     }
   }
+  removeMedia() {
+    this.bg.asset = null;
+    this.imgData = null;
+  }
 
 }

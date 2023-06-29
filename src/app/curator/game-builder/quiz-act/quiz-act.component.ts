@@ -52,4 +52,7 @@ export class QuizActComponent implements OnInit {
       explanation: ""
     })
   }
+  remove(index) {
+    this.activity.content.questions.splice(index, 1);
+  }    
 }

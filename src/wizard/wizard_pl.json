@@ -1,0 +1,285 @@
+{
+  "no_wizard": {
+    "title": "Nieznany pomocnik",
+    "steps": [
+      "Żądany pomocnik jest niedostępny!"
+    ]
+  },
+  "welcome": {
+    "title": "Asystent kuratora",
+    "steps": [
+      "Tak, po kliknięciu w ikonę zobaczysz pomocnika z wieloma ciekawymi zaleceniami metodycznymi.",
+      "Jeśli nie jesteś jeszcze członkiem żadnej organizacji, kliknij menu rozwijane \"Wybrana organizacja\" w lewym górnym rogu. Gdzie możesz utworzyć nową organizację lub zostać członkiem istniejącej organizacji.",
+      "Użyj tego menu, aby przełączać się między organizacjami, w których tworzysz treści."
+    ]
+  },
+  "language": {
+    "title": "Język gry",
+    "steps": [
+      "Wybierz język, w jakim będą wpisywane instrukcje do poszczególnych czynności.",
+      "Możesz wybrać język słowacki, czeski, angielski i polski.",
+      "W zależności od wybranego języka, użytkownicy będą mogli znaleźć grę w tym języku.",
+      "Następnie możesz stworzyć tę samą grę w innym języku."
+    ]
+  },
+  "age": {
+    "title": "Zalecenie wiekowe",
+    "steps": [
+      "Kategoria wiekowa określa trudność i cel gry.",
+      "Do wyboru kategorie wiekowe: 12+, 15+, 18+",
+      "W zależności od kategorii wiekowej użytkownicy będą mogli znaleźć odpowiednią grę.",
+      "Możesz tworzyć gry dla różnych grup docelowych dla jednego wydarzenia."
+    ]
+  },
+  "difficulty": {
+    "title": "Znajomość treści gier",
+    "steps": [
+      "Zaawansowanie treściowe gry określa kurator w zależności od stopnia trudności wykonania czynności.",
+      "Do wyboru są trzy poziomy specjalizacji.",
+      "Gry o wyższych umiejętnościach mogą mieć trudniejsze pytania i zadania lub ograniczenia czasowe.",
+      "Możesz tworzyć gry o różnych poziomach trudności dla jednego wydarzenia."
+    ]
+  },
+  "text_intro": {
+    "title": "Wprowadzenie tekstowe do gry",
+    "steps": [
+      "Wiadomość tekstowa, która pojawia się po uruchomieniu gry.",
+      "Może to być powitanie, podstawowe informacje, instrukcje do ćwiczeń lub historia motywacyjna.",
+      "Witamy - Witamy w grze lub instytucjach.",
+      "Informacje podstawowe - Informacje o instytucjach lub wydarzeniach.",
+      "Instrukcje dotyczące czynności - jak postępować w grze, jak otwierać aktywności itp.",
+      "Opowieść motywacyjna – wydarzenie może być tematyczne, a zajęcia mogą być do niego dostosowane.",
+      "Tekst we wstępie nie powinien być zbyt długi (maks. 100 znaków)."
+    ]
+  },
+  "text_finish": {
+    "title": "Ostatnia wiadomość po zakończeniu działań",
+    "steps": [
+      "Wiadomość tekstowa, która pojawia się po pomyślnym zakończeniu wszystkich czynności.",
+      "Może to być powitanie, podstawowe informacje, instrukcja wyjścia, dokończenie historii lub przekierowanie na inną stronę.",
+      "Powitanie – Pożegnanie, podziękowanie lub wskazówka do następnego zadania, zdarzenia.",
+      "Informacje podstawowe – Informacje o instytucji, wydarzeniu lub o czym była gra.",
+      "Instrukcje zakończenia - jak postępować, co zrobić z otrzymanym kodem itp.",
+      "Uzupełnienie historii - wydarzenie może być tematyczne i cel gry może być do niego dostosowany.",
+      "Przekierowanie na stronę – instrukcje mogą przekierować użytkownika na konkretną stronę.",
+      "Tekst na końcu nie powinien być zbyt długi (maks. 100 znaków)."
+    ]
+  },
+  "map_image": {
+    "title": "Mapa gry — wybierz obraz",
+    "steps": [
+      "Wybierz obrazek, na którym będą wyświetlane punkty za poszczególne czynności.",
+      "Obraz może być tematyczny instytucji, wydarzenia, miejsca wydarzenia, miasta lub w formie mapy.",
+      "Możesz wybrać kolor przycisków aktywności w zależności od rodzaju i koloru obrazu.",
+      "Po dodaniu działań ułóż punkty na powierzchni obrazu według własnego uznania.",
+      "Obraz powinien być związany z wydarzeniem i czynnościami w grze."
+    ]
+  },
+  "pass_in": {
+    "title": "Hasło umożliwiające wejście do czynności",
+    "steps": [
+      "Możesz zdefiniować hasło, którego gracze będą używać do otwierania tej aktywności.",
+      "Hasło wejściowe może być cyfrą, literą lub słowem.",
+      "Hasło może być odpowiedzią na instrukcję do klucza (np. w którym roku się urodził...)",
+      "Hasło może być wyświetlane w określonym miejscu podczas wydarzenia, które odwiedzający musi znaleźć (np. pierwsze słowo na tablicy informacyjnej)",
+      "Hasłem może być nazwa artefaktu lub informacja, którą odwiedzający otrzymuje od konkretnej osoby.",
+      "Hasło nie powinno zawierać spacji ani innych znaków specjalnych.",
+      "Instrukcje dotyczące wprowadzania hasła powinny być jasne i zwracać uwagę na wielkość liter i znaki diakrytyczne."
+    ]
+  },
+  "pass_how": {
+    "title": "Jak zdobyć hasło, aby wejść do działania",
+    "steps": [
+      "Instrukcja kierująca gracza do wprowadzenia hasła logowania.",
+      "Instrukcja może skierować gracza w określone miejsce lub podpowiedzieć do wprowadzenia hasła.",
+      "Na przykład: puzzle, informacje są przy posągu itp."
+    ]
+  },
+  "pass_out": {
+    "title": "Otrzymano hasło po udanej aktywności",
+    "steps": [
+      "Możesz zdefiniować hasło, które gracz otrzyma po pomyślnym ukończeniu gry.",
+      "Hasło wyjściowe może być liczbą, literą lub słowem.",
+      "Hasła z poszczególnych czynności mogą być ze sobą powiązane lub nie.",
+      "Liczby jako hasła wyjściowe z poszczególnych czynności mogą razem tworzyć datę lub kod blokady.",
+      "Słowa mogą tworzyć znaczące zdania lub służyć jako wskazówki do hasła (np. jabłko, wąż, Adam, Ewa = raj)",
+      "Litery mogą służyć jako pomoc w ostatnim słowie (np. s, t, o, m = mostek)",
+      "Instrukcje, jak postępować z otrzymanymi hasłami, można znaleźć w Tekstowym wprowadzeniu do gry lub w Słowie końcowym po zakończeniu gry."
+    ]
+  },
+  "mem_pair": {
+    "title": "Memory - dodaj nową parę",
+    "steps": [
+      "Podczas zabawy memory powstaje 6 par",
+      "W zależności od wybranej kategorii wiekowej i specjalizacji należy określić rodzaje par.",
+      "W młodszych grupach wiekowych odpowiednia jest praca z obrazkami.",
+      "Pary mogą być różne w zależności od trudności i wieku.",
+      "Mogą to być np.: autor i utwór (w postaci ilustracji i tekstu), utwór i rok wydania, utwór i gatunek, zabytek i miejsce odkrycia itp.",
+      "Pary w ramach jednego ćwiczenia powinny być tego samego typu (a więc wszystkie sześć par powinno być: obrazek – obrazek lub tekst – tekst lub tekst – obrazek).",
+      "Objaśnienie - krótka informacja dodatkowa o znalezionej parze."
+    ]
+  },
+  "mem_pair_time": {
+    "title": "Czas na memory",
+    "steps": [
+      "Jeśli wartość jest pusta, czas na rozwiązanie zadania jest nieograniczony.",
+      "Zdefiniowana wartość (liczba całkowita) określa, ile czasu gracz ma na znalezienie wszystkich par.",
+      "Jeśli gracz nie zrobi tego w określonym czasie, nie wykona zadania i nie otrzyma hasła wyjścia (jeśli zostało zdefiniowane). Może powtórzyć grę jeszcze raz."
+    ]
+  },
+  "max_tries": {
+    "title": "Maksymalna liczba prób",
+    "steps": [
+      "Jeśli wartość jest pusta, liczba prób rozwiązania zadania jest nieograniczona.",
+      "Zdefiniowana wartość (liczba całkowita) określa maksymalną liczbę obróconych par.",
+      "Zaleca się wpisanie minimalnej wartości 12 (aby była szansa na odwrócenie każdej karty, a także znalezienie par).",
+      "Jeśli gracz nie wykona go z określoną liczbą prób, nie otrzyma hasła wyjścia (jeśli zostało zdefiniowane). Może powtórzyć grę jeszcze raz."
+    ]
+  },
+  "correct_one": {
+    "title": "Właściwy wybór",
+    "steps": [
+      "Aktywność, w której gracz odpowiada na pytanie i wybiera jedną z dwóch oferowanych opcji.",
+      "Zarówno opcje, jak i pytania mogą być w formie tekstowej lub graficznej.",
+      "W ramach tego działania możesz zdefiniować dowolną liczbę pytań.",
+      "Podczas definiowania odpowiedzi należy wpisać, która z opcji jest poprawna.",
+      "Objaśnienie - krótka informacja dodatkowa o rozwiązanym zadaniu."
+    ]
+  },
+  "correct_one_time": {
+    "title": "Czas – właściwy wybór",
+    "steps": [
+      "Jeśli wartość jest pusta, czas na rozwiązanie zadania jest nieograniczony.",
+      "Jeśli zdefiniowana jest wartość (liczba całkowita), określa ona, ile czasu gracz ma na rozwiązanie wszystkich pytań.",
+      "Jeśli gracz nie zrobi tego w określonym czasie, nie wykona zadania i nie otrzyma hasła wyjścia (jeśli zostało zdefiniowane). Może powtórzyć grę jeszcze raz."
+    ]
+  },
+  "quiz": {
+    "title": "Kartkówka",
+    "steps": [
+      "Aktywność, w której gracz odpowiada na pytanie i wybiera jedną z czterech oferowanych opcji.",
+      "Pytanie może mieć formę tekstową lub graficzną",
+      "Odpowiedzi mogą być tylko w formie tekstowej.",
+      "W ramach tego działania możesz zdefiniować dowolną liczbę pytań.",
+      "Pierwsza z podanych odpowiedzi jest poprawna. Odpowiedzi są tasowane losowo podczas gry.",
+      "Wyjaśnienie - krótkie dodatkowe informacje o zadanym pytaniu i poprawna odpowiedź."
+    ]
+  },
+  "quiz_time": {
+    "title": "Czas - Quiz",
+    "steps": [
+      "Jeśli wartość jest pusta, czas na rozwiązanie zadania jest nieograniczony.",
+      "Jeśli zdefiniowana jest wartość (liczba całkowita), określa ona, ile czasu gracz ma na rozwiązanie wszystkich pytań.",
+      "Jeśli gracz nie zrobi tego w określonym czasie, nie wykona zadania i nie otrzyma hasła wyjścia (jeśli zostało zdefiniowane). Może powtórzyć grę jeszcze raz."
+    ]
+  },
+  "open_question": {
+    "title": "Pytanie otwarte",
+    "steps": [
+      "Aktywność, w której gracz odpowiada na otwarte pytanie.",
+      "W tym ćwiczeniu można zadać kilka pytań.",
+      "Pytania mogą dotyczyć odczuć, opinii, rekomendacji, informacji o zawodniku lub bodźców do wydarzenia lub konkretnego utworu.",
+      "Odpowiedzi są w formie dowolnego tekstu, który gracz zapisuje w polu tekstowym.",
+      "Odpowiedzi nie mogą być oceniane automatycznie.",
+      "Objaśnienie - krótka informacja dodatkowa wyświetlana po wypełnieniu odpowiedzi.",
+      "Odpowiedzi z tego działania zostaną wysłane do twórcy gry po zakończeniu działania, gdy gracz jest podłączony do Internetu."
+    ]
+  },
+  "find_on_image": {
+    "title": "Znajdź na zdjęciu",
+    "steps": [
+      "Aktywność, w której gracz szuka konkretnej rzeczy, miejsca na obrazku, które musi zaznaczyć.",
+      "Zaznaczenie poszukiwanego miejsca na obrazie odbywa się za pomocą punktu w kształcie koła.",
+      "Istnieje możliwość zdefiniowania kilku punktów na jednym obrazie, które należy znaleźć na obrazie jeden po drugim.",
+      "Kolor punktu można dobrać w zależności od tła, tak aby był on wystarczająco widoczny.",
+      "Wyjaśnienie - krótka informacja dodatkowa o znalezionym punkcie."
+    ]
+  },
+  "find_on_image_time": {
+    "title": "Czas - Znajdź na obrazku",
+    "steps": [
+      "Jeśli wartość jest pusta, czas na rozwiązanie zadania jest nieograniczony.",
+      "Jeśli zdefiniowana jest wartość (liczba całkowita), określa ona, ile czasu gracz ma na znalezienie wszystkich zdefiniowanych punktów.",
+      "W tym czasie gracz może klikać w kilka miejsc na obrazku, szukając odpowiedniego punktu.",
+      "Jeśli gracz nie zrobi tego w określonym czasie, nie wykona zadania i nie otrzyma hasła wyjścia (jeśli zostało zdefiniowane). Może powtórzyć grę jeszcze raz."
+    ]
+  },
+  "timeline": {
+    "title": "Oś czasu",
+    "steps": [
+      "W tym ćwiczeniu określa się treść zadania i określa się 5 opcji, do których się odwołujemy.",
+      "Wchodząc w opcje należy je ułożyć w odpowiedniej kolejności.",
+      "Treść zadań może być różna. Na przykład: uporządkuj od najstarszego do najmłodszego, od największego do najmniejszego, od najmniejszego do najdalszego itd.",
+      "Podczas gry opcje są rozrzucane losowo.",
+      "Na przykład (Sformułowanie zadania: Ułóż wyświetlane artefakty od najstarszych do najnowszych. Opcje: posąg XY, obraz XY, obrazy YZ, księga XZ, obraz YZ).",
+      "Objaśnienie - krótkie dodatkowe informacje o rozwiązaniu.",
+      "Wyjaśnienie jest wyświetlane po poprawnym posortowaniu obrazów (jeśli jest zdefiniowane)."
+    ]
+  },
+  "timeline_time": {
+    "title": "Czas – oś czasu",
+    "steps": [
+      "Jeśli wartość jest pusta, czas na rozwiązanie zadania jest nieograniczony.",
+      "Jeśli zdefiniowana jest wartość (liczba całkowita), określa ona, ile czasu gracz ma na prawidłowe ułożenie obrazków zgodnie z instrukcją.",
+      "Jeśli gracz nie zrobi tego w określonym czasie, nie wykona zadania i nie otrzyma hasła wyjścia (jeśli zostało zdefiniowane). Może powtórzyć grę jeszcze raz."
+    ]
+  },
+  "explanation": {
+    "title": "Wyjaśnienie",
+    "steps": [
+      "Dodatkowe informacje o poprawnie znalezionym rozwiązaniu zadania.",
+      "Tekst wprowadza twórca gry i wyświetla się graczowi po poprawnym rozwiązaniu danej części zadania.",
+      "Jeśli to pole jest puste, nie są wyświetlane żadne dodatkowe informacje."
+    ]
+  },
+  "asset_library": {
+    "title": "Biblioteka multimediów",
+    "steps": [
+      "Wszystkie obrazy, z którymi będziesz pracować (obrazy do mapy gry i poszczególnych działań) muszą zostać przesłane do biblioteki multimediów.",
+      "Obrazy można edytować - przycinać.",
+      "Obraz można usunąć tylko wtedy, gdy nie jest nigdzie używany."
+    ]
+  },
+  "save": {
+    "title": "Zapisz grę",
+    "steps": [
+      "Gra zostanie zapisana jako praca w toku, ale zmiany nie będą jeszcze dostępne dla graczy."
+    ]
+  },
+  "test": {
+    "title": "Zapisz grę i przetestuj",
+    "steps": [
+      "Gra zostanie zapisana i możesz ją wypróbować w tym samym czasie.",
+      "Obecna wersja gry nie będzie dostępna dla graczy."
+    ]
+  },
+  "publish": {
+    "title": "Opublikuj i zapisz grę",
+    "steps": [
+      "Gra zostanie zapisana, a aktualna wersja będzie dostępna dla graczy.",
+      "Jeśli gracze mieli pobraną starą wersję, po uruchomieniu jej na swoim urządzeniu zaktualizowana wersja gry zostanie pobrana i uruchomiona."
+    ]
+  },
+  "statistics": {
+    "title": "Statystyka",
+    "steps": [
+      "Gdy gracze ukończą całą grę i połączą się z Internetem, informacje o grze zostaną przesłane do interfejsu nadzoru.",
+      "Operator nie zbiera od graczy żadnych danych osobowych ani wrażliwych.",
+      "Statystyki są dostępne tylko dla członków organizacji, w ramach której powstała gra.",
+      "W ramach statystyk możemy poznać: czas rozwiązania zadań, czas rozwiązania całej gry, liczbę prób rozwiązania zadań, liczbę poprawnych odpowiedzi oraz informację wypełnioną w \"Pytaniu otwartym\" działalność."
+    ]
+  },
+  "share": {
+    "title": "Udostępnij w sieciach społecznościowych",
+    "steps": [
+      "Grę można udostępnić na profilu Facebook organizacji lub osoby."
+    ]
+  },
+  "remove": {
+    "title": "Usuń grę",
+    "steps": [
+      "Po usunięciu gry nie będzie ona dostępna, a wszystkie informacje statystyczne zostaną usunięte.",
+      "Gra nie będzie dostępna dla graczy."
+    ]
+  }
+}

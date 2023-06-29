@@ -2,7 +2,7 @@
   <img src="/assets/TTC_logo.png" class="logo">
   <span class="clickable" (click)="home()">{{ 'TouchTheCulture' | translate }}</span>
   <span class="spacer"></span>
-  <button *ngIf="sharedService.lngSelector" mat-button [matMenuTriggerFor]="menu">{{language}}</button>
+  <button mat-button [matMenuTriggerFor]="menu">{{language}}</button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item
     *ngFor="let language of languages"

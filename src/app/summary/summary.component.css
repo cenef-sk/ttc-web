@@ -1,0 +1,21 @@
+.center {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.wrapper {
+  margin: 90px;
+  margin-top: 60px;
+  padding: 0px;
+}
+
+.tabData {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabData table {
+  width: 100%;
+}

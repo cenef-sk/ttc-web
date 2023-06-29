@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DialogAboutComponent } from "src/app/dialogs/dialog-about/dialog-about.component";
 import { DialogTermsComponent } from "src/app/dialogs/dialog-terms/dialog-terms.component";
-import { SharedService } from "src/app/shared.service";
 import { MatDialog } from "@angular/material";
 import { TranslateService } from "@ngx-translate/core";
 import { Router } from "@angular/router";
@@ -28,7 +27,6 @@ export class CuratorLayoutComponent implements OnInit {
         private router: Router,
         private translate: TranslateService,
         public dialog: MatDialog,
-        public sharedService: SharedService,
         public contentService: ContentService,
         @Inject('LOCALSTORAGE') public local,
       ) {
@@ -36,7 +34,6 @@ export class CuratorLayoutComponent implements OnInit {
         if (savedLocale) {
           this.setLanguage(savedLocale);
         }
-        sharedService.setLng(translate.currentLang)
 
         contentService.getOrgsForUser(globals.user._id).subscribe((orgs) => {
           this.orgs = orgs
@@ -46,6 +43,14 @@ export class CuratorLayoutComponent implements OnInit {
         })
       }
 
+      sOrg() {
+        if (this.orgs && this.orgs.length && this.selectedOrg) {
+          return this.orgs.find((org) => org._id == this.selectedOrg)
+        } else {
+          return null;
+        }
+      }
+
       ngOnInit() {
       }
 
@@ -53,7 +58,6 @@ export class CuratorLayoutComponent implements OnInit {
         this.language = language;
         this.translate.use(language);
         this.local.setItem('locale', language)
-        this.sharedService.setLng(this.translate.currentLang)
       }
 
       openDialogTerms() {

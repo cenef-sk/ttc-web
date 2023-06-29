@@ -1,0 +1,285 @@
+{
+  "no_wizard": {
+    "title": "Neznámy pomocník",
+    "steps": [
+      "Požadovaný pomocník nie je k dispozícií!"
+    ]
+  },
+  "welcome": {
+    "title": "Kurátorský pomocník",
+    "steps": [
+      "Áno po kliknutí na ikonu sa vám zobrazí pomocník, s množstvom zaujímavých metodických odporúčaní.",
+      "Ak ešte nie ste členom žiadnej organizácie kliknite v ľavom hornom rohu na rolovacie menu \"Zvolená organizácia\". Kde môžete vytvoriť novú organizáciu alebo sa stať členom už existujúcej organizácie.",
+      "Pomocou tohto menu môžete prepínať medzi organizáciami, v ktorých vytvárate obsah."
+    ]
+  },
+  "language": {
+    "title": "Jazyk hry",
+    "steps": [
+      "Vyber jazyk, v akom budú zadávane inštrukcie k jednotlivým aktivitám.",
+      "Na výber máš slovenský, český, anglický a poľský jazyk.",
+      "Podľa zvoleného jazyka si budú môcť užívatelia nájsť hru v danom jazyku.",
+      "Rovnakú hru si potom môžete vytvoriť aj v inom jazyku."
+    ]
+  },
+  "age": {
+    "title": "Vekové doporučenie",
+    "steps": [
+      "Veková kategória určuje náročnosť a cieľ hry.",
+      "Na výber máš vekové kategórie: 12+, 15+, 18+",
+      "Podľa vekovej kategórie si budú môcť užívatelia nájsť vhodnú hru.",
+      "K jednému podujatiu môžete vytvoriť hry pre rôzne cieľové skupiny."
+    ]
+  },
+  "difficulty": {
+    "title": "Odbornosť obsahu hry",
+    "steps": [
+      "Odbornosť obsahu hry definuje kurátor podľa náročnosti plnenia aktivít.",
+      "Na výber sú tri úrovne odbornosti.",
+      "Hry s vyššou odbornosťou  môžu mať náročnejšie otázky a úlohy, alebo časové obmedzenia.",
+      "K jednému podujatiu môžete vytvoriť hry s rôznymi obťažnosťami."
+    ]
+  },
+  "text_intro": {
+    "title": "Textový úvod do hry",
+    "steps": [
+      "Textová správa, ktorá sa zobrazí pri spustení hry.",
+      "Môže sa jednať o privítanie, základné informácie, inštrukcie k aktivitám, alebo motivačný príbeh.",
+      "Privítanie – Privítanie v hre, alebo inštitúcií.",
+      "Základné informácie – Informácie o inštitúcií alebo podujatí.",
+      "Inštrukcie k aktivitám – ako postupovať v hre, ako otvárať aktivity a pod.",
+      "Motivačný príbeh – podujatie môže byť tematické a aktivity môžu byť tomu prispôsobené.",
+      "Text v úvode by nemal byť príliš dlhý (max. 100 znakov). "
+    ]
+  },
+  "text_finish": {
+    "title": "Posledná správa po odohraní aktivít",
+    "steps": [
+      "Textová správa, ktorá sa zobrazí po úspešnom prejdení všetkých aktivít.",
+      "Môže sa jednať o pozdrav, základné informácie, inštrukcie k ukončeniu, dokončenie príbehu, alebo presmerovanie na inú stránku.",
+      "Pozdrav – Rozlúčenie, poďakovanie alebo usmernenie k ďalšej úlohe, podujatiu.",
+      "Základné informácie – Informácie o inštitúcií, podujatí alebo čo bolo cieľom hry.",
+      "Inštrukcie k ukončeniu – ako ďalej postupovať, čo majú robiť so získaným kódom a pod.",
+      "Dokončenie príbehu – podujatie môže byť tematické a cieľ hry môžu byť tomu prispôsobený.",
+      "Presmerovanie na stránku – inštrukcie môžu presmerovať užívateľa na konkrétnu stránku.",
+      "Text na záver by nemal byť príliš dlhý (max. 100 znakov)."
+    ]
+  },
+  "map_image": {
+    "title": "Mapa hry - Zvoľte obrázok",
+    "steps": [
+      "Vyberte obrázok, na ktorom sa budú zobrazovať  body k jednotlivým aktivitám.",
+      "Obrázok môže byť tematický k inštitúcií, k podujatiu, miestu podujatia, mestu, alebo vo forme mapy.",
+      "Podľa typu a farby obrázku si môžete vybrať farbu tlačidiel aktivít.",
+      "Po pridaní aktivít, rozmiestnite body na ploche obrázku podľa vlastného uváženia.",
+      "Obrázok by mal súvisieť s podujatím a aktivitami v hre."
+    ]
+  },
+  "pass_in": {
+    "title": "Heslo pre vstup do aktivity",
+    "steps": [
+      "Môžete zadefinovať heslo, ktorým otvoria hráči túto aktivitu.",
+      "Vstupné heslo môže byť číslo, písmeno alebo slovo.",
+      "Heslo môže byť odpoveď na inštrukciu ku kľúču (napr. V ktorom roku sa narodil...)",
+      "Heslo môže byť zobrazené na konkrétnom mieste počas podujatia, ktoré musí návštevník nájsť (napr. prvé slovo na informačnej tabuli)",
+      "Heslo môže byť názov artefaktu, alebo informácia, ktorú získa návštevník od konkrétnej osoby.",
+      "Heslo by nemalo obsahovať medzery ani iné špeciálne znaky.",
+      "Inštrukcia k vstupnému heslu by mala byť jasná a pozor na veľkosť písmen a diakritiku."
+    ]
+  },
+  "pass_how": {
+    "title": "Ako získať heslo pre vstup do aktivity",
+    "steps": [
+      "Inštrukcia, ktorá usmerní hráča k zadaniu vstupného hesla.",
+      "Inštrukcia môže nasmerovať hráča na konkrétne miesto, alebo mu poskytnúť nápovedu pre vstupné heslo.",
+      "Napríklad: hádanka, informácia je pri soche a pod."
+    ]
+  },
+  "pass_out": {
+    "title": "Získané heslo po úspešnej aktivite",
+    "steps": [
+      "Môžete zadefinovať heslo, ktoré hráč získa po úspešnom ukončení hry.",
+      "Výstupné heslo môže byť číslo, písmeno alebo slovo.",
+      "Heslá z jednotlivých aktivít môžu ale nemusia na seba nadväzovať.",
+      "Čísla ako výstupné heslá z jednotlivých aktivít môžu spolu vytvárať dátum, alebo kód od zámku.",
+      "Slová môžu vytvoriť zmysluplnú vetu, alebo slúžiť ako nápovedá k heslo (napr. jablko, had, Adam, Eva = Raj)",
+      "Písmena môžu slúžiť ako pomôcka ku finálnemu slovu (napr. s, t, o, m = most)",
+      "Inštrukcie ako pokračovať so získanými heslami môžu byť uvedené v Textovom úvode do hry, alebo v Záverečnom slove po ukončení hry. "
+    ]
+  },
+  "mem_pair": {
+    "title": "Pexeso - pridať nový pár",
+    "steps": [
+      "Pri aktivite pexeso sa vytvára 6 párov (dvojíc)",
+      "Podľa zvolenej vekovej kategórie a odbornosti je vhodné definovať typy dvojíc.",
+      "Pri nižších vekových kategóriách je vhodné pracovať s obrázkami.",
+      "Dvojice môžu byť podľa náročnosti, veku rôzne.",
+      "Môžu byť napríklad: autor a dielo (vo forme obrázkov aj textov), dielo a rok vydania, dielo a žáner, artefakt a miesto nálezu a pod.",
+      "Dvojice v rámci jednej aktivity by mali byť rovnakého typu (všetkých šesť párov by teda malo byť: obrázok – obrázok ,alebo  text – text, alebo text - obrázok).",
+      "Vysvetlenie – krátka doplňujúca informácia ku nájdenému páru."
+    ]
+  },
+  "mem_pair_time": {
+    "title": "Čas - Pexeso",
+    "steps": [
+      "Ak je hodnota prázdna, čas na riešenie úlohy je neobmedzený.",
+      "Zadefinovaná hodnota (celé číslo), určuje koľko času má hráč na nájdenie všetkých dvojíc.",
+      "Pokiaľ to hráč v danom čase nestihne, nesplní úlohu a nezíska výstupne heslo (ak je definované). Hru môže opakovať znova. "
+    ]
+  },
+  "max_tries": {
+    "title": "Maximálny počet pokusov",
+    "steps": [
+      "Ak je hodnota prázdna, počet pokusov na riešenie úlohy je neobmedzený.",
+      "Zadefinovaná hodnota (celé číslo), určuje maximálny počet otočených dvojíc.",
+      "Odporúča sa zadať minimálnu hodnotu 12 (aby bola šanca otočiť každú kartu a nájsť aj dvojice).",
+      "Pokiaľ to hráč s daným počtom pokusov nesplní, nezíska výstupne heslo (ak je definované). Hru môže opakovať znova. "
+    ]
+  },
+  "correct_one": {
+    "title": "Správna voľba",
+    "steps": [
+      "Aktivita, pri ktorej hráč odpovedá na otázku a vyberá si jednu z dvoch ponúknutých možností.",
+      "Možností aj otázky môžu mať textovú alebo obrázkovú podobu.",
+      "V rámci tejto aktivity môžete zadefinovať ľubovoľný počet otázok.",
+      "Pri definovaní odpovedí je potrebné zadať, ktorá z možností je správna.",
+      "Vysvetlenie – krátka doplňujúca informácia ku riešenej úlohe."
+    ]
+  },
+  "correct_one_time": {
+    "title": "Čas - Správna voľba",
+    "steps": [
+      "Ak je hodnota prázdna, čas na riešenie úlohy je neobmedzený.",
+      "Ak je zadefinovaná hodnota (celé číslo), určuje, koľko času má hráč na vyriešenie všetkých otázok.",
+      "Pokiaľ to hráč v danom čase nestihne, nesplní úlohu a nezíska výstupne heslo (ak je definované). Hru môže opakovať znova."
+    ]
+  },
+  "quiz": {
+    "title": "Kvíz",
+    "steps": [
+      "Aktivita, pri ktorej hráč odpovedá na otázku a vyberá si jednu zo štyroch ponúknutých možností.",
+      "Otázka môže mať textovú alebo obrázkovú podobu.",
+      "Odpovede môžu mať len textovú podobu.",
+      "V rámci tejto aktivity môžete zadefinovať ľubovoľný počet otázok.",
+      "Prvá zo zadaných odpovedí je správna.  Odpovede sa počas hrania hry náhodne premiešajú.",
+      "Vysvetlenie – krátka doplňujúca informácia ku danej otázke a správnej odpovedi."
+    ]
+  },
+  "quiz_time": {
+    "title": "Čas - Kvíz",
+    "steps": [
+      "Ak je hodnota prázdna, čas na riešenie úlohy je neobmedzený.",
+      "Ak je zadefinovaná hodnota (celé číslo), určuje, koľko času má hráč na vyriešenie všetkých otázok.",
+      "Pokiaľ to hráč v danom čase nestihne, nesplní úlohu a nezíska výstupne heslo (ak je definované). Hru môže opakovať znova."
+    ]
+  },
+  "open_question": {
+    "title": "Otvorená otázka",
+    "steps": [
+      "Aktivita, pri ktorej hráč odpovedá na otvorenú otázku.",
+      "V rámci tejto aktivity môže byť zadaných viacero otázok.",
+      "Otázky môžu byť smerované na pocity, názory, odporúčania, informácie o hráčovi alebo podnety k podujatiu alebo konkrétnemu dielu.",
+      "Odpovede sú v podobe voľného textu, ktorý píše hráč do textového poľa.",
+      "Odpovede nie je možné automaticky vyhodnocovať.",
+      "Vysvetlenie – krátka doplňujúca informácia zobrazená po vyplnení odpovede.",
+      "Odpovede z tejto aktivity sa zašlú tvorcovi hry po jej ukončení v čase, keď je hráč pripojený k internetu."
+    ]
+  },
+  "find_on_image": {
+    "title": "Nájdi na obrázku",
+    "steps": [
+      "Aktivita, pri ktorej hráč hľadá konkrétnu vec, miesto na obrázku, ktoré musí označiť.",
+      "Označenie hľadaného miesta na obrázku je pomocou bodu v tvare kruhu.",
+      "Na jednom obrázku je možné zadefinovať viacero bodov, ktoré je potrebné postupne nájsť  na obrázku.",
+      "Farbu bodu je možné vybrať podľa pozadia tak, aby bol dostatočne viditeľný.",
+      "Vysvetlenie – krátka doplňujúca informácia ku nájdenému bodu."
+    ]
+  },
+  "find_on_image_time": {
+    "title": "Čas - Nájdi na obrázku",
+    "steps": [
+      "Ak je hodnota prázdna, čas na riešenie úlohy je neobmedzený.",
+      "Ak je zadefinovaná hodnota (celé číslo), určuje, koľko času má hráč na nájdenie všetkých nadefinovaných bodov.",
+      "Hráč môže pri hľadaní správneho bodu, počas tohto času klikať na viacero miest na obrázku.",
+      "Pokiaľ to hráč v danom čase nestihne, nesplní úlohu a nezíska výstupne heslo (ak je definované). Hru môže opakovať znova."
+    ]
+  },
+  "timeline": {
+    "title": "Timeline - Časová os",
+    "steps": [
+      "Pri tejto aktivite je zadefinované znenie úlohy a zadaných 5 možností, na ktoré sa odvolávame.",
+      "Pri zadávaní možností je potrebné ich usporiadať v správnom poradí.",
+      "Znenia úloh môžu byť rôzne. Napríklad: zoradiť od najstaršej po najmladšiu, od najväčšej po najmenšiu, najmenej vzdialenú po najvzdialenejšiu a pod.",
+      "Pri hraní hry sa možnosti náhodne rozhádžu.",
+      "Napríklad (Znenie úlohy: Usporiadaj zobrazené artefakty od najstaršieho po najnovší. Možností: socha XY, obraz XY, obrazy YZ, kniha XZ, obraz YZ).",
+      "Vysvetlenie – krátka doplňujúca informácia ku riešeniu.",
+      "Vysvetlenie sa zobrazí po správnom zoradení obrázkov (ak bolo zadefinované)."
+    ]
+  },
+  "timeline_time": {
+    "title": "Čas – Timeline",
+    "steps": [
+      "Ak je hodnota prázdna, čas na riešenie úlohy je neobmedzený.",
+      "Ak je zadefinovaná hodnota (celé číslo), určuje, koľko času má hráč na správne zoradenie obrázkov podľa inštrukcií.",
+      "Pokiaľ to hráč v danom čase nestihne, nesplní úlohu a nezíska výstupne heslo (ak je definované). Hru môže opakovať znova."
+    ]
+  },
+  "explanation": {
+    "title": "Vysvetlenie",
+    "steps": [
+      "Doplňujúca informácia k správne nájdenému riešeniu úlohy.",
+      "Text zadáva tvorca hry a hráčovi sa zobrazí po správnom vyriešení danej časti aktivity.",
+      "Ak je toto pole prázdne, nezobrazí sa žiadna doplňujúca informácia."
+    ]
+  },
+  "asset_library": {
+    "title": "Knižnica médií",
+    "steps": [
+      "Do knižnice médií je potrebné nahrať všetky obrázky, s ktorými budete pracovať (obrázky k mape hry aj jednotlivým aktivitám).",
+      "Obrázky je možne upraviť – orezať. ",
+      "Obrázok je možné odstrániť len keď nie je nikde používaný."
+    ]
+  },
+  "save": {
+    "title": "Uložiť hru",
+    "steps": [
+      "Hra sa uloží ako rozpracovaná, ale zmeny nebudú zatiaľ dostupné pre hráčov."
+    ]
+  },
+  "test": {
+    "title": "Uložiť hru a otestovať",
+    "steps": [
+      "Hra sa uloží a zároveň máte možnosť ju vyskúšať.",
+      "Aktuálna verzia hry nebude dostupná hráčom."
+    ]
+  },
+  "publish": {
+    "title": "Publikovať a uložiť hru",
+    "steps": [
+      "Hra sa uloží a aktuálna verzia bude dostupná pre hráčov.",
+      "Ak mali hráči stiahnutú starú verziu, tak pri jej spustení v ich zariadení sa im stiahne a spustí aktualizovaná verzia hry."
+    ]
+  },
+  "statistics": {
+    "title": "Štatistiky",
+    "steps": [
+      "Keď hráči ukončia celú hru a sú pripojení k internetu, informácie o hre sa pošlú do kurátorského rozhrania.",
+      "Prevádzkovateľ nezbiera od hráčov žiadne osobné a citlivé údaje.",
+      "Štatistiky sú dostupne len pre členov organizácie, pod ktorou bola hra vytvorená.",
+      "V rámci štatistík vieme zistiť: čas riešenia aktivít, čas riešenia celej hry, počty pokusov pri riešení úloh, počet správnych odpovedí a informácie vyplnené v aktivite \"Otvorená otázka\"."
+    ]
+  },
+  "share": {
+    "title": "Zdieľaj na sociálnych sieťach",
+    "steps": [
+      "Hru je možné zdieľať na Facebook profile organizácie alebo osoby."
+    ]
+  },
+  "remove": {
+    "title": "Odstrániť hru",
+    "steps": [
+      "Po odstránení hry nebude možné k nej pristupovať a zmažú sa všetky štatistické informácie.",
+      "Hra nebude pre hráčov prístupná. "
+    ]
+  }
+}

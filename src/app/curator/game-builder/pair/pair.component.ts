@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Globals } from "src/app/globals";
 import { MatDialog } from "@angular/material";
 import { ContentService } from "src/app/content.service";
@@ -80,6 +80,17 @@ export class PairComponent implements OnInit {
       });
   }
 
+  removeMedia(index) {
+    if(index == 0) {
+      this.pair.item1.img = null
+      delete this.pair.item1.crop
+      this.croppedImage1 = null
+    } else {
+      this.pair.item2.img = null
+      delete this.pair.item2.crop
+      this.croppedImage2 = null
+    }
+  }
 
   mediaUrl(assetId) {
     return this.contentService.API + 'assets/' + assetId + '/media'

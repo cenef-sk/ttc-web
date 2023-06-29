@@ -23,6 +23,7 @@ import { GameEditorComponent } from "./curator/game-editor/game-editor.component
 import { OrgsManagementComponent } from "./curator/orgs-management/orgs-management.component";
 import { ViewMediaAssetComponent } from "./curator/view-media-asset/view-media-asset.component";
 import { GamingLayoutComponent } from "./player/gaming-layout/gaming-layout.component";
+import { SummaryComponent } from "./summary/summary.component";
 
 const routes: Routes = [
   {
@@ -108,6 +109,10 @@ const routes: Routes = [
         {
           path: 'edit-org/:id',
           component: CreateOrgComponent
+        },
+        {
+          path: 'results/:id',
+          component: SummaryComponent
         },
         {
           path: 'join',

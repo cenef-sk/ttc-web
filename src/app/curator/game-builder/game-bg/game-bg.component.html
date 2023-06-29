@@ -1,5 +1,5 @@
 <div class="centered">
-  <h2 *ngIf="bg.asset && !activities.length">Pridajte aktivitu, ktorú následne umiestnite do vašej mapy</h2>
+  <h2 *ngIf="bg.asset && !activities.length">{{'games.addToMap' | translate}}</h2>
   <div *ngIf="bg.asset && activities.length" class="circles">
     <img *ngFor="let circle of circles; let index = index"
     width="50px"
@@ -9,11 +9,20 @@
     >
   </div>
   <div #canvasMap class = "canvas-img" id="canvas-img">
-    <button *ngIf="!bg.asset" mat-raised-button color="primary" (click)="mediaSelection()">Zvoľte obrázok</button>
+    <button *ngIf="!bg.asset" class="action-button" mat-raised-button color="primary" (click)="mediaSelection()">{{'games.selImg' | translate}}</button>
     <span class="wizard" *ngIf="!bg.asset">
-      <app-wizard-button wizardType="img_selection"></app-wizard-button>
+      <app-wizard-button wizardType="map_image"></app-wizard-button>
     </span>
-    <img *ngIf="imgData" #levelMapImg id="levelMapImg"  [src]="imgData" (load)="loaded(levelMapImg)">
+
+    <div class="preview">
+      <img *ngIf="imgData" #levelMapImg id="levelMapImg"  [src]="imgData" (load)="loaded(levelMapImg)">
+      <div *ngIf="imgData" class="remove">
+        <button  mat-icon-button
+        (click)="removeMedia()" aria-label="Example icon button with a home icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
     <!-- <canvas #levelMap class="levelMap" id="levelMap"  width="220" height="277">
       Your browser does not support the HTML5 canvas tag.
     </canvas> -->
@@ -31,8 +40,11 @@
       [src]="'/assets/circles/' + circles[bg.selectedPointer]"
       width="60px" height="60px"
       >
+      <div class="num">
+        <h3>{{index + 1}}</h3>
+      </div>
       <div *ngIf="act.showDesc" class="desc">
-        <span>{{act.name}}</span>
+        <span>{{act.label | translate}}</span>
       </div>
       </div>
     </ng-container>

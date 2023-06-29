@@ -14,7 +14,6 @@ import { LoginComponent } from './intro/login/login.component';
 import { httpInterceptorProviders } from './http-interceptors';
 import { RegisterComponent } from './intro/register/register.component';
 
-import { QuillModule } from 'ngx-quill';
 import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -59,7 +58,6 @@ import { ViewMediaAssetComponent } from './curator/view-media-asset/view-media-a
 import { MemoryActComponent } from './curator/game-builder/memory-act/memory-act.component';
 import { TimelineActComponent } from './curator/game-builder/timeline-act/timeline-act.component';
 import { LocateOnImgActComponent } from './curator/game-builder/locate-on-img-act/locate-on-img-act.component';
-import { GameSetupComponent } from './curator/game-builder/game-setup/game-setup.component';
 import { GameBgComponent } from './curator/game-builder/game-bg/game-bg.component';
 import { QuizActComponent } from './curator/game-builder/quiz-act/quiz-act.component';
 import { OneCorrectImgActComponent } from './curator/game-builder/one-correct-img-act/one-correct-img-act.component';
@@ -72,6 +70,8 @@ import { GamingLayoutComponent } from './player/gaming-layout/gaming-layout.comp
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { OpenQuestionItemComponent } from './curator/game-builder/open-question-item/open-question-item.component';
 import { OpenQuestionComponent } from "./curator/game-builder/open-question/open-question.component";
+import { ChartComponent } from './chart/chart.component';
+import { OneCorrectImgActItemComponent } from './curator/game-builder/one-correct-img-act-item/one-correct-img-act-item.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +107,6 @@ import { OpenQuestionComponent } from "./curator/game-builder/open-question/open
     MemoryActComponent,
     TimelineActComponent,
     LocateOnImgActComponent,
-    GameSetupComponent,
     GameBgComponent,
     QuizActComponent,
     OneCorrectImgActComponent,
@@ -119,6 +118,8 @@ import { OpenQuestionComponent } from "./curator/game-builder/open-question/open
     GamingLayoutComponent,
     OpenQuestionComponent,
     OpenQuestionItemComponent,
+    ChartComponent,
+    OneCorrectImgActItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -131,9 +132,6 @@ import { OpenQuestionComponent } from "./curator/game-builder/open-question/open
           provide: TranslateLoader,
           useClass: CustomLoader
         }
-    }),
-    QuillModule.forRoot({
-      suppressGlobalRegisterWarning: true
     }),
     BrowserAnimationsModule,
     MatSelectModule,

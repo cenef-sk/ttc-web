@@ -1,5 +1,5 @@
 <div *ngIf="cropping" class="cropping">
-  <h2 class="center">Vyberte zobrazovanú časť obrázka</h2>
+  <h2 class="center">{{'media.selView' | translate}}</h2>
   <div *ngIf="base64Image" class="img-wrapper"
   [style.width] = "wrapperWidthPx">
     <image-cropper
@@ -20,14 +20,14 @@
   </div>
 
   <p class="button">
-    <button mat-raised-button color="primary" (click)="cropDone()" name="button">Vybrať</button>
+    <button mat-raised-button color="primary" (click)="cropDone()" name="button">{{'media.sel' | translate}}</button>
   </p>
 
   <!-- <img *ngIf="croppedImg" [src]="croppedImg"> -->
 </div>
 
 <ng-container *ngIf="!cropping">
-  <h2 class="center">Vyberte obrázok z vašej knižnice</h2>
+  <h2 class="center">{{'media.selFromLib' | translate}}</h2>
   <div class="container">
     <div class="assetSelection"
     *ngFor="let asset of assets" (click) = selected(asset)>

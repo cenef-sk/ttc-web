@@ -18,3 +18,8 @@
 .example-full-width {
   width: 100%;
 }
+
+.wizard {
+  position: absolute;
+  margin-left: 10px;
+}

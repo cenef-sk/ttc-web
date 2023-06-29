@@ -1,26 +1,27 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Vytvorenie novej organizácei</mat-card-title>
-    <mat-card-subtitle>Vytvorte novú organizáciu a staňte sa jej administrátorom </mat-card-subtitle>
+    <mat-card-title>{{'org.createNew1' | translate}}</mat-card-title>
+    <mat-card-subtitle>{{'org.createNew2' | translate}} </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Názov organizácie</mat-label>
-        <input matInput [formControl]="titleFormControl" placeholder="Napr. CeNef" autocomplete="off">
+        <mat-label>{{'org.name' | translate}}</mat-label>
+        <input matInput [formControl]="titleFormControl" placeholder="{{'org.namePlaceholder' | translate}}" autocomplete="off">
         <mat-error *ngIf="titleFormControl.hasError('required')">
-          Názov organizácie sa <strong>vyžaduje</strong>
+          {{'org.nameReq' | translate}}
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Popis organizácie</mat-label>
-        <input matInput [formControl]="descriptionFormControl" placeholder="Napr. niečo o vašej organizácii, ..." autocomplete="off">
+        <mat-label>{{'org.desc' | translate}}</mat-label>
+        <input matInput [formControl]="descriptionFormControl" placeholder="{{'org.descPlaceholder' | translate}}" autocomplete="off">
       </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="save()"
-    >Uložiť</button>
-    <button mat-button (click)="cancel()">Zrušiť</button>
+    [disabled] = "!titleFormControl.value.length"
+    >{{'org.save' | translate}}</button>
+    <button mat-button (click)="cancel()">{{'org.cancel' | translate}}</button>
   </mat-card-actions>
 </mat-card>

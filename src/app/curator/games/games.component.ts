@@ -22,6 +22,18 @@ export class GamesComponent implements OnInit {
     ngOnInit() {
       this.contentService.getGames().subscribe((res) => {
         this.games = res;
+        this.contentService.getPubGames().subscribe((res: any) => {
+          this.games.forEach(g => {
+
+            let pubGame = res.find(pg => pg.game == g._id)
+            if (pubGame) {
+              g.published = true;
+              g.codeOnly = pubGame.codeOnly
+            } else {
+              g.published = false;
+            }
+          })
+        })
       })
     }
 

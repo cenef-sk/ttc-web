@@ -1,0 +1,285 @@
+{
+  "no_wizard": {
+    "title": "Unknown helper",
+    "steps": [
+      "The requested helper is not available!"
+    ]
+  },
+  "welcome": {
+    "title": "Curator's assistant",
+    "steps": [
+      "Yes, after clicking on the icon, you will see a helper with a lot of interesting methodical recommendations.",
+      "If you are not yet a member of any organization, click on the drop-down menu \"Chosen organization\" in the upper left corner. Where you can create a new organization or become a member of an existing organization.",
+      "Use this menu to switch between organizations where you create content."
+    ]
+  },
+  "language": {
+    "title": "Game language",
+    "steps": [
+      "Choose the language in which the instructions for the individual activities will be entered.",
+      "You can choose Slovak, Czech, English and Polish.",
+      "According to the selected language, users will be able to find the game in the given language.",
+      "You can then create the same game in another language."
+    ]
+  },
+  "age": {
+    "title": "Age recommendation",
+    "steps": [
+      "The age category determines the difficulty and goal of the game.",
+      "You can choose age categories: 12+, 15+, 18+.",
+      "According to the age category, users will be able to find a suitable game.",
+      "For one event, you can create games for different target groups."
+    ]
+  },
+  "difficulty": {
+    "title": "Expertise of the game content",
+    "steps": [
+      "Expertise of the game content is defined by the curator according to the difficulty of completing the activities",
+      "There are three levels of expertise to choose from.",
+      "Games with higher expertise may have more demanding questions and tasks, or time restrictions. ",
+      "You can create games with different difficulties for one event."
+    ]
+  },
+  "text_intro": {
+    "title": "Text introduction to the game ",
+    "steps": [
+      "Text message that is displayed when the game is started.",
+      "It can be a welcome, basic information, instructions for activities, or a motivational story.",
+      "Welcome - Welcome to the game or institutions.",
+      "Basic information - Information about institutions or events.",
+      "Instructions for activities - how to proceed in the game, how to open activities, etc.",
+      "Motivational story - the event can be thematic and the activities can be adapted to it.",
+      "The text in the introduction should not be too long (max. 100 characters)."
+    ]
+  },
+  "text_finish": {
+    "title": "Last message after completing activities",
+    "steps": [
+      "Text message that is displayed after successfully completing all activities.",
+      "It can be a greeting, basic information, instructions to exit, complete the story, or redirect to another page.",
+      "Greeting – Farewell, thank you or guidance to the next task, event.",
+      "Background Information – Information about the institution, event or what the game was about.",
+      "Termination instructions - how to proceed, what to do with the obtained code, etc.",
+      "Completing the story - the event can be themed and the goal of the game can be adapted to it.",
+      "Redirecting to a page - instructions can redirect the user to a specific page.",
+      "The text at the end should not be too long (max. 100 characters)."
+    ]
+  },
+  "map_image": {
+    "title": "Game map - Choose an image",
+    "steps": [
+      "Choose an image on which points for individual activities will be displayed.",
+      "The image can be thematic of institutions, an event, event location, city, or in the form of a map.",
+      "Depending on the type and color of the image, you can choose the color of the activity buttons.",
+      "After adding activities, distribute the points on the image area as you see fit.",
+      "The image should be related to the event and activities in the game."
+    ]
+  },
+  "pass_in": {
+    "title": "Password for entering the activity",
+    "steps": [
+      "You can define the password that players use to open this activity.",
+      "The input password can be a number, letter or word.",
+      "The password can be the answer to the instruction to the key (e.g. What year was he born...)",
+      "The password can be displayed in a specific place during the event that the visitor has to find (e.g. the first word on the information board)",
+      "The password can be the name of the artifact or information that the visitor receives from a specific person.",
+      "The password should not contain spaces or other special characters.",
+      "The instructions for the input password should be clear and pay attention to capitalization and diacritics."
+    ]
+  },
+  "pass_how": {
+    "title": "How to get a password to enter the activity",
+    "steps": [
+      "Instruction that guides the player to enter the password.",
+      "The instruction can direct the player to a specific place, or provide a hint for the input password.",
+      "For example: a puzzle, the information is near the statue, etc."
+    ]
+  },
+  "pass_out": {
+    "title": "Obtained password after a successful activity",
+    "steps": [
+      "You can define a password that the player receives after successfully completing the game.",
+      "The output password can be a number, letter or word.",
+      "Passwords from individual activities may or may not be connected to each other.",
+      "Numbers as output passwords from individual activities can together create a date or code from a lock.",
+      "Words can create a meaningful sentence or serve as clues to a password (e.g. apple, snake, Adam, Eve = Paradise)",
+      "Letters can serve as an aid to the final word (e.g. s, t, o, m = bridge)",
+      "Instructions on how to continue with the obtained passwords can be given in the Text introduction to the game, or in the Final word after the game is finished."
+    ]
+  },
+  "mem_pair": {
+    "title": "Pexeso - add a new pair",
+    "steps": [
+      "6 pairs (doubles) are created during the pexeso activity",
+      "According to the chosen age category and expertise, it is appropriate to define the types of pairs.",
+      "For lower age categories, it is appropriate to work with pictures.",
+      "Pairs can be different according to difficulty and age.",
+      "They can be, for example: author and work (in the form of images and texts), work and year of publication, work and genre, artefact and place of discovery, etc.",
+      "Pairs within one activity should be of the same type (all six pairs should therefore be: picture - picture, or text - text, or text - picture).",
+      "Explanation - short additional information about the found pair."
+    ]
+  },
+  "mem_pair_time": {
+    "title": "Time - Pexeso",
+    "steps": [
+      "If the value is empty, the time to solve the task is unlimited.",
+      "The defined value (integer) determines how much time the player has to find all the pairs.",
+      "If the player does not manage to do it in the given time, he will not complete the task and will not get the output password (if defined). He can repeat the game again."
+    ]
+  },
+  "max_tries": {
+    "title": "Maximum number of attempts",
+    "steps": [
+      "If the value is empty, the number of attempts to solve the problem is unlimited.",
+      "The defined value (integer) determines the maximum number of rotated pairs.",
+      "It is recommended to enter a minimum value of 12 (so that there is a chance to turn over each card and also find pairs).",
+      "If the player does not fulfill this with the given number of attempts, he will not get the exit password (if defined). He can repeat the game again."
+    ]
+  },
+  "correct_one": {
+    "title": "Correct choice",
+    "steps": [
+      "An activity in which the player answers a question and chooses one of the two options offered.",
+      "Both options and questions can be in text or image form.",
+      "Within this activity, you can define any number of questions.",
+      "When defining the answers, you must enter which of the options is correct.",
+      "Explanation - short additional information about the solved task."
+    ]
+  },
+  "correct_one_time": {
+    "title": "Time - Correct choice",
+    "steps": [
+      "If the value is empty, the time to solve the task is unlimited.",
+      "If the value (integer) is defined, it determines how much time the player has to solve all the questions.",
+      "If the player does not make it in the given time, he will not complete the task and will not get the exit password ( if defined). He can repeat the game again."
+    ]
+  },
+  "quiz": {
+    "title": "Quiz",
+    "steps": [
+      "An activity in which the player answers a question and chooses one of the four options offered.",
+      "The question can be in text or image form.",
+      "Answers can only be in text form.",
+      "Within this activity, you can define any number of questions.",
+      "The first of the entered answers is correct. The answers are shuffled randomly during the game.",
+      "Explanation - short additional information about the given question and the correct answer."
+    ]
+  },
+  "quiz_time": {
+    "title": "Time - Quiz",
+    "steps": [
+      "If the value is empty, the time to solve the task is unlimited.",
+      "If a value (integer) is defined, it determines how much time the player has to solve all questions.",
+      "If the player fails to do so in the given time, he will not complete the task and will not get the exit password (if defined). He can repeat the game again."
+    ]
+  },
+  "open_question": {
+    "title": "Open question",
+    "steps": [
+      "An activity in which the player answers an open question.",
+      "Several questions can be asked within this activity.",
+      "The questions can be directed to feelings, opinions, recommendations, information about the player or suggestions for an event or a specific work.",
+      "The answers are in the form of free text that the player writes in the text field.",
+      "The answers cannot be evaluated automatically.",
+      "Explanation - short additional information displayed after filling in the answer.",
+      "Answers from this activity will be sent to the creator of the game after its completion while the player is connected to the Internet."
+    ]
+  },
+  "find_on_image": {
+    "title": "Find in the picture",
+    "steps": [
+      "An activity in which the player searches for a specific thing, a place in the picture that he must mark.",
+      "Marking of the searched place on the picture is done using a point in the shape of a circle.",
+      "It is possible to define several points on one picture, which must be found on the picture one by one.",
+      "The color of the point can be selected according to the background so that it is sufficiently visible.",
+      "Explanation - short additional information about the found point."
+    ]
+  },
+  "find_on_image_time": {
+    "title": "Time - Find in the picture",
+    "steps": [
+      "If the value is empty, the time to solve the task is unlimited.",
+      "If the value (whole number) is defined, it determines how much time the player has to find all the defined points.",
+      "The player can click on several places on the image while searching for the correct point.",
+      "If the player fails to do so in the given time, he will not complete the task and will not get the exit password (if defined). He can repeat the game again."
+    ]
+  },
+  "timeline": {
+    "title": "Timeline",
+    "steps": [
+      "In this activity, the wording of the task is defined and 5 options are specified, which we refer to.",
+      "When entering the options, it is necessary to arrange them in the correct order.",
+      "The wording of the tasks may be different. For example: order from oldest to youngest, from largest to smallest, least distant to most distant, etc.",
+      "As you play the game, the options are scattered randomly.",
+      "For example (Task wording: Arrange the displayed artifacts from oldest to newest. Options: statue XY, painting XY, paintings YZ, book XZ, painting YZ).",
+      "Explanation - short additional information about the solution.",
+      "The explanation is displayed after the images are correctly sorted (if defined)."
+    ]
+  },
+  "timeline_time": {
+    "title": "Time - Timeline",
+    "steps": [
+      "If the value is empty, the time to solve the task is unlimited.",
+      "If the value (integer) is defined, it determines how much time the player has to correctly arrange the images according to the instructions.",
+      "If the player does not manage to do it in the given time, he will not complete the task and will not get the exit password (if defined). He can repeat the game again."
+    ]
+  },
+  "explanation": {
+    "title": "Explanation",
+    "steps": [
+      "Additional information about the correctly found solution to the task.",
+      "The text is entered by the game creator and will be displayed to the player after the given part of the activity has been correctly solved.",
+      "If this field is empty, no additional information will be displayed."
+    ]
+  },
+  "asset_library": {
+    "title": "Media library",
+    "steps": [
+      "All images with which you will work (images for the game map and individual activities) must be uploaded to the media library.",
+      "Images can be edited - cropped.",
+      "The image can only be deleted if it is not used anywhere."
+    ]
+  },
+  "save": {
+    "title": "Save Game",
+    "steps": [
+      "The game will be saved as a work in progress, but the changes will not be available to players yet."
+    ]
+  },
+  "test": {
+    "title": "Save the game and test",
+    "steps": [
+      "The game is saved and you have the opportunity to try it at the same time.",
+      "The current version of the game will not be available to players."
+    ]
+  },
+  "publish": {
+    "title": "Publish and save the game",
+    "steps": [
+      "The game will be saved and the current version will be available to the players.",
+      "If the players had downloaded the old version, when they run it on their device, the updated version of the game will be downloaded and run."
+    ]
+  },
+  "statistics": {
+    "title": "Statistics",
+    "steps": [
+      "When players complete the entire game and are connected to the Internet, game information is sent to the curatorial interface.",
+      "The operator does not collect any personal or sensitive data from the players.",
+      "Statistics are only available to members of the organization under which the game was created.",
+      "As part of the statistics, we can find out: the time to solve the activities, the time to solve the whole game, the number of attempts to solve the tasks, the number of correct answers and the information filled in the \"Open question\" activity."
+    ]
+  },
+  "share": {
+    "title": "Share on social networks",
+    "steps": [
+      "The game can be shared on the Facebook profile of an organization or person."
+    ]
+  },
+  "remove": {
+    "title": "Delete the game",
+    "steps": [
+      "Once the game is deleted, it will not be accessible and all statistical information will be deleted.",
+      "The game will not be accessible to players."
+    ]
+  }
+}

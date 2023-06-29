@@ -11,15 +11,20 @@ import { Game } from "src/model/Game";
 })
 export class ContentService {
   // public API = 'http://192.168.0.166:3070/api/';
-  public WEB_APP = 'http://127.0.0.1:8080';
-
-  public API = 'http://127.0.0.1:3070/api/';
-  // public WEB_APP = 'https://app.touchtheculture.eu/web/';
-  // public API = 'https://curator.touchtheculture.eu/api/';
+  // public WEB_APP = 'http://127.0.0.1:8080';
+  // //
+  // public API = 'http://127.0.0.1:3070/api/';
+  public WEB_APP = 'https://app.touchtheculture.eu/web/';
+  public API = 'https://curator.touchtheculture.eu/api/';
 
   private mediaUrl = (assetId: string) => this.API + 'assets/' + assetId + '/media';
   private assetUrl = (assetId: string) => this.API + 'assets/' + assetId;
+  private isUsedAssetUrl = (assetId: string) => this.gamesUrl + 'assets/' + assetId;
   private gameUrl = (gameId: string) => this.API + 'games/' + gameId;
+  private gameDownloadsUrl = (gameId: string) => this.API + 'games/' + gameId + "/downloads";
+  private gameAnalyticsUrl = (gameId: string) => this.API + 'games/' + gameId + "/analytics";
+  private publishGameUrl = (gameId: string) => this.API + 'games/' + gameId + '/publish';
+  private unpublishGameUrl = (gameId: string) => this.API + 'games/' + gameId + '/unpublish';
   private orgUrl = (orgId: string) => this.API + 'orgs/' + orgId;
   private orgJoinUrl = (orgId: string) => this.API + 'orgs/' + orgId + '/join';
   private orgAcceptJoinUrl =
@@ -32,6 +37,7 @@ export class ContentService {
   private orgMembersUrl = (orgId: string) => this.API + 'orgs/' + orgId + '/members';
   private mediaAssetsUrl = this.API + 'assets/'
   private gamesUrl = this.API + 'games/'
+  private pubGamesUrl = this.gamesUrl + 'published/all'
   private orgsUrl = this.API + 'orgs/'
   private changeOrgTokenUrl = this.API + 'users/changed-org-token'
 
@@ -55,6 +61,13 @@ export class ContentService {
       )
   }
 
+  public isUsedAsset = (assetId): Observable<any> => {
+      return this.http.get(this.isUsedAssetUrl(assetId)).pipe(
+        map((response: any) => response),
+        catchError(this.handleError)
+      )
+  }
+
   public deleteOrg = (orgId): Observable<any> => {
     //TODO check if media is deleted
       return this.http.delete(this.orgUrl(orgId)).pipe(
@@ -72,6 +85,13 @@ export class ContentService {
 
   public getOrgMembers = (orgId): Observable<any> => {
       return this.http.get(this.orgMembersUrl(orgId)).pipe(
+        map((response: any) => <any>response.data),
+        catchError(this.handleError)
+      )
+  }
+
+  public getMediaAsset = (assetId): Observable<any> => {
+      return this.http.get(this.assetUrl(assetId)).pipe(
         map((response: any) => <any>response.data),
         catchError(this.handleError)
       )
@@ -133,6 +153,12 @@ export class ContentService {
         catchError(this.handleError)
       )
   }
+  public getPubGames = (): Observable<any[]> => {
+      return this.http.get(this.pubGamesUrl).pipe(
+        map((response: any) => <any[]>response.data),
+        catchError(this.handleError)
+      )
+  }
 
   public getGame = (gameId): Observable<Game> => {
       return this.http.get(this.gameUrl(gameId)).pipe(
@@ -140,6 +166,21 @@ export class ContentService {
         catchError(this.handleError)
       )
   }
+
+  public getGameDownloads = (gameId): Observable<any> => {
+      return this.http.get(this.gameDownloadsUrl(gameId)).pipe(
+        map((response: any) => <any>response.data),
+        catchError(this.handleError)
+      )
+  }
+
+  public getGameAnalytics = (gameId): Observable<any> => {
+      return this.http.get(this.gameAnalyticsUrl(gameId)).pipe(
+        map((response: any) => <any>response.data),
+        catchError(this.handleError)
+      )
+  }
+
   public deleteGame = (gameId): Observable<any> => {
       return this.http.delete(this.gameUrl(gameId)).pipe(
         map((response: any) => response),
@@ -167,9 +208,37 @@ export class ContentService {
     )
   }
 
+  public publishGame = (gameId, data): Observable<Game> => {
+    return this.http.put(
+      this.publishGameUrl(gameId) ,
+      data
+    ).pipe(
+      map((response: any) => <Game>response.data),
+      catchError(this.handleError)
+    )
+  }
+
+  public unpublishGame = (gameId): Observable<Game> => {
+    return this.http.delete(
+      this.unpublishGameUrl(gameId)
+    ).pipe(
+      map((response: any) => <Game>response.data),
+      catchError(this.handleError)
+    )
+  }
   public addMediaAsset = (data): Observable<MediaAsset> => {
     return this.http.post(
       this.mediaAssetsUrl ,
+      data
+    ).pipe(
+      map((response: any) => <MediaAsset>response.data),
+      catchError(this.handleError)
+    )
+  }
+
+  public updateMediaAsset = (assetId, data): Observable<MediaAsset> => {
+    return this.http.put(
+      this.assetUrl(assetId) ,
       data
     ).pipe(
       map((response: any) => <MediaAsset>response.data),
@@ -185,6 +254,20 @@ export class ContentService {
       map((response: any) => <Organization>response.data),
       catchError(this.handleError)
     )
+  }
+
+  public updateOrg = (orgId, data): Observable<Organization> => {
+      return this.http.put(this.orgUrl(orgId), data).pipe(
+        map((response: any) => <Organization>response.data),
+        catchError(this.handleError)
+      )
+  }
+
+  public getOrg = (orgId): Observable<Organization> => {
+      return this.http.get(this.orgUrl(orgId)).pipe(
+        map((response: any) => <Organization>response.data),
+        catchError(this.handleError)
+      )
   }
 
   public changeOrgToken = (orgId): Observable<string> => {

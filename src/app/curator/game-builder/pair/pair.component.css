@@ -5,6 +5,7 @@
 .centered {
   padding-top: 50px;
   text-align: center;
+  position: relative;
 }
 .example-form {
   margin-top: 50px;
@@ -17,4 +18,35 @@
 
 .example-full-width {
   width: 100%;
+}
+
+.wizard {
+  position: absolute;
+  margin-left: 10px;
+}
+
+.panel {
+  position: relative;
+}
+
+.delete-item {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.preview {
+  position: relative;
+  display: inline-block;
 }

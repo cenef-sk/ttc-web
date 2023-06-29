@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <mat-tab-group mat-align-tabs="start"
+  <mat-tab-group dynamicHeight mat-align-tabs="start"
   [selectedIndex]="selected.value"
   (selectedIndexChange)="selection($event)"
   (selectedTabChange) = "change($event)"
@@ -12,7 +12,14 @@
       [bg]="bg" (bgLoaded)="bgLoaded($event)"></app-game-bg>
       <!-- <ng-container *ngTemplateOutlet="bg"></ng-container> -->
     </mat-tab>
-    <mat-tab *ngFor="let act of acts; let index = index" [label]="act.label | translate">
+    <mat-tab *ngFor="let act of acts; let index = index">
+      <ng-template mat-tab-label>
+        {{(index + 1) + '. ' + (act.label | translate) + ' '}}
+        <mat-icon
+          [ngClass]="{'example-tab-icon': true, 'done-icon': actIcon(index), 'missing-icon': !actIcon(index)}">
+          {{actIcon(index)?'done':'close'}}
+        </mat-icon>
+      </ng-template>
       <ng-container *ngIf="!act.type">
         <div class="centered">
           <mat-form-field appearance="outline" class="orgs-selection">
@@ -38,7 +45,7 @@
         <app-locate-on-img-act [activity]="act"></app-locate-on-img-act>
       </ng-container>
       <ng-container *ngIf="act.type=='one-correct'">
-        <app-one-correct-img-act></app-one-correct-img-act>
+        <app-one-correct-img-act [activity]="act"></app-one-correct-img-act>
       </ng-container>
       <ng-container *ngIf="act.type=='open-question'">
         <app-open-question [activity]="act"></app-open-question>
@@ -55,7 +62,7 @@
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon>add</mat-icon>
-        Add Activity
+        {{'games.addAct' | translate}}
       </ng-template>
     </mat-tab>
   </mat-tab-group>
@@ -66,44 +73,50 @@
   <div class="centered">
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Názov hry</mat-label>
-        <input matInput [formControl]="titleFormControl" placeholder="Napr. Spoznajte dielo Posledná večera" autocomplete="off">
+        <mat-label>{{'games.name' | translate}}</mat-label>
+        <input matInput [formControl]="titleFormControl" placeholder="{{'games.namePlaceholder' | translate}}" autocomplete="off">
         <mat-error *ngIf="titleFormControl.hasError('required')">
-          Názov sa <strong>vyžaduje</strong>
+          {{'games.nameReq' | translate}}
         </mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Organizácia</mat-label>
+        <mat-label>{{'games.org' | translate}}</mat-label>
         <input matInput  [formControl]="orgFormControl" autocomplete="off">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Kód pre vstup do nepublikovanej hry</mat-label>
+        <mat-label>{{'games.code' | translate}}</mat-label>
         <input matInput  [formControl]="codeFormControl" autocomplete="off">
       </mat-form-field>
       <mat-form-field appearance="fill" class="example-full-width">
-        <mat-label>Jazyk hry</mat-label>
+        <mat-label>{{'games.lng' | translate}}</mat-label>
         <mat-select [(ngModel)]="selectedLng" name="lng">
           <mat-option *ngFor="let lng of lngs" [value]="lng">
             {{lng}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <span class="wizard">
+        <app-wizard-button wizardType="language"></app-wizard-button>
+      </span>
       <mat-form-field appearance="fill" class="example-full-width">
-        <mat-label>Vekové doporučenie</mat-label>
+        <mat-label>{{'games.age' | translate}}</mat-label>
         <mat-select [(ngModel)]="selectedAge" name="age">
           <mat-option *ngFor="let age of ages" [value]="age">
             {{age}}
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <span class="wizard">
+        <app-wizard-button wizardType="age"></app-wizard-button>
+      </span>
       <mat-form-field appearance="fill" class="example-full-width">
-        <mat-label>Odbornosť obsahu hry</mat-label>
+        <mat-label>{{'games.diffLevel' | translate}}</mat-label>
         <mat-select [(ngModel)]="selectedLevel" name="level">
           <mat-select-trigger>
             <mat-icon>school</mat-icon>&nbsp;
-            {{ selectedLevel }}
+            {{ (levels() | async)[selectedLevel] }}
           </mat-select-trigger>
-          <mat-option *ngFor="let level of levels; let index = index" [value]="level">
+          <mat-option *ngFor="let level of (levels() | async); let index = index" [value]="index">
             <mat-icon>school</mat-icon>
             <mat-icon *ngIf="index > 0">school</mat-icon>
             <mat-icon *ngIf="index < 1"></mat-icon>
@@ -113,31 +126,71 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
+      <span class="wizard">
+        <app-wizard-button wizardType="difficulty"></app-wizard-button>
+      </span>
       <ng-container *ngTemplateOutlet="intro"></ng-container>
       <ng-container *ngTemplateOutlet="end"></ng-container>
     </form>
   </div>
-  <div class="centered">
-    <button mat-raised-button class="action-button" color="primary" (click)="save()">Uložiť hru</button>
-    <button mat-raised-button class="action-button" color="primary" (click)="test()">Uložiť hru a otestovať</button>
-    <button mat-raised-button class="action-button" color="primary" (click)="publish()">Publikovať a uložiť hru</button>
-    <button mat-raised-button class="action-button" disabled>Štatistiky</button>
-    <button mat-raised-button class="action-button" disabled><mat-icon>share</mat-icon>Zdieľaj na socialnych sieťach</button>
-    <button mat-raised-button class="action-button" color="primary" (click)="delete()">Odstrániť hru</button>
+  <div class="centered2">
+    <!-- <button mat-raised-button class="action-button" color="primary" (click)="save()">Uložiť hru</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="save"></app-wizard-button>
+    </span> -->
+    <button mat-raised-button class="action-button" color="primary" (click)="test()">{{'games.test' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="test"></app-wizard-button>
+    </span>
+    <!-- <button mat-raised-button class="action-button" color="primary" (click)="publish()">Publikovať a uložiť hru</button> -->
+    <button mat-raised-button class="action-button" color="primary" [matMenuTriggerFor]="menu">
+      <mat-icon *ngIf="published">visibility</mat-icon>
+      <mat-icon *ngIf="!published">visibility_off</mat-icon>
+      <mat-icon *ngIf="codeOnly">key</mat-icon>
+      {{'games.publish' | translate}}</button>
+    <mat-menu #menu="matMenu">
+      <button *ngIf="trusted" mat-menu-item (click)="publish()">{{'games.publishPublic' | translate}}</button>
+      <button mat-menu-item (click)="publish(true)">{{'games.publishCode' | translate}} {{codeFormControl.value}}</button>
+      <button *ngIf="published" mat-menu-item (click)="unpublish()">{{'games.unpublish' | translate}}</button>
+    </mat-menu>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="publish"></app-wizard-button>
+    </span>
+
+    <button mat-raised-button class="action-button" color="primary" (click)="delete()">{{'games.delete' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="remove"></app-wizard-button>
+    </span>
+  </div>
+  <div class="centered2">
+    <button mat-raised-button class="action-button" (click)="results()" [disabled]="!gameId">{{'games.stats' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="statistics"></app-wizard-button>
+    </span>
+    <button mat-raised-button class="action-button" (click)="share()" [disabled]="!gameId"><mat-icon>share</mat-icon>{{'games.share' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="share"></app-wizard-button>
+    </span>
   </div>
 </ng-template>
 
 <ng-template #intro>
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Textový úvod do hry</mat-label>
-    <textarea matInput rows="5" [formControl]="introFormControl" placeholder="Napr. Spoznajte krásy a históriu nášho krásneho mesta."></textarea>
+    <mat-label>{{'games.textIntro' | translate}}</mat-label>
+    <textarea matInput rows="5" [formControl]="introFormControl" placeholder="{{'games.textIntroPlaceholder' | translate}}"></textarea>
   </mat-form-field>
+  <span class="wizard">
+    <app-wizard-button wizardType="text_intro"></app-wizard-button>
+  </span>
 </ng-template>
 <ng-template #end>
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Posledné slová po odohraní všetkých aktivít</mat-label>
-    <textarea matInput [formControl]="endFormControl" rows="5" placeholder="Napr. Ak vás táto hra zaujala, navštívte aj naše múzeum."></textarea>
+    <mat-label>{{'games.endText' | translate}}</mat-label>
+    <textarea matInput [formControl]="endFormControl" rows="5" placeholder="{{'games.endTextPlaceholder' | translate}}"></textarea>
   </mat-form-field>
+  <span class="wizard">
+    <app-wizard-button wizardType="text_finish"></app-wizard-button>
+  </span>
 </ng-template>
 <!-- <ng-template #bg>
   <div class="centered">

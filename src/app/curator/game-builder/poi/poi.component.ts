@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Globals } from "src/app/globals";
 import { MatDialog } from "@angular/material";
 import { ContentService } from "src/app/content.service";
@@ -13,6 +13,7 @@ export class PoiComponent implements OnInit {
   @Input() poi = null;
   @Input() index = 0;
 
+  @Output() removeEvent = new EventEmitter<number>();
 
   explanationFormControl = new FormControl();
   questionFormControl = new FormControl();
@@ -35,5 +36,8 @@ export class PoiComponent implements OnInit {
     this.questionFormControl.valueChanges.subscribe((changedVal) => {
       this.poi.question = changedVal
     })
+  }
+  remove(index) {
+    this.removeEvent.emit(index);
   }
 }

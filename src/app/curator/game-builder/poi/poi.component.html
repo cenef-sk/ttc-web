@@ -1,7 +1,7 @@
 <mat-expansion-panel>
   <mat-expansion-panel-header>
     <mat-panel-title>
-      Bod záujmu č. {{index + 1}}
+      {{'games.poi' | translate}} {{index + 1}}
     </mat-panel-title>
     <mat-panel-description>
       <!-- názov -->
@@ -9,12 +9,18 @@
   </mat-expansion-panel-header>
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Otázka</mat-label>
-      <input matInput [formControl]="questionFormControl" placeholder="Napr. Kde sa nachádza zdroj svetla?" autocomplete="off">
+      <mat-label>{{'games.question' | translate}}</mat-label>
+      <input matInput [formControl]="questionFormControl" placeholder="{{'games.questionPlaceholder' | translate}}" autocomplete="off">
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Vysvetlenie</mat-label>
-      <input matInput [formControl]="explanationFormControl" placeholder="Napr. Ako rozpoznať zdroj svetla" autocomplete="off">
+      <mat-label>{{'games.expl' | translate}}</mat-label>
+      <input matInput [formControl]="explanationFormControl" placeholder="{{'games.explPlaceholder2' | translate}}" autocomplete="off">
     </mat-form-field>
+    <span class="wizard">
+      <app-wizard-button wizardType="explanation"></app-wizard-button>
+    </span>
   </form>
+  <mat-action-row>
+    <button mat-button color="primary" (click)="remove(index)"><mat-icon>delete</mat-icon> {{'act.remove' | translate}} </button>
+  </mat-action-row>
 </mat-expansion-panel>

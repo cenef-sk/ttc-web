@@ -2,37 +2,52 @@
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Aktivita časová os
+        {{'games.actTimeline' | translate}}
+        <span class="wizard-act">
+          <app-wizard-button wizardType="timeline"></app-wizard-button>
+        </span>
       </mat-panel-title>
       <mat-panel-description>
-        Základné nastavenia aktivity
+        {{'games.actBasic' | translate}}
       </mat-panel-description>
     </mat-expansion-panel-header>
     <div class="centered">
       <app-activity-pass [config]="activity.config"></app-activity-pass>
       <form class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Popis úlohy</mat-label>
-          <input matInput [formControl]="titleFormControl" placeholder="Napr. Usporiadajte chronologicky autorove diela." autocomplete="off">
+          <mat-label>{{'games.timelineTask' | translate}}</mat-label>
+          <input matInput [formControl]="titleFormControl" placeholder="{{'games.timelineTaskPlaceholder' | translate}}" autocomplete="off">
           <mat-error *ngIf="titleFormControl.hasError('required')">
-            Popis úlohy sa <strong>vyžaduje</strong>
+            {{'games.timelineTaskReq' | translate}}
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Vysvetlenie</mat-label>
-          <input matInput [formControl]="explanationFormControl" placeholder="Napr. Ake znaky majú obrazy daného autora" autocomplete="off">
+          <mat-label>{{'games.expl' | translate}}</mat-label>
+          <input matInput [formControl]="explanationFormControl" placeholder="{{'games.explPlaceholder' | translate}}" autocomplete="off">
         </mat-form-field>
+        <span class="wizard">
+          <app-wizard-button wizardType="explanation"></app-wizard-button>
+        </span>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Časové obmedzenie (v sekundách)</mat-label>
-          <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
+          <mat-label>{{'games.timeLimit' | translate}}</mat-label>
+          <input matInput [formControl]="timeFormControl" placeholder="{{'games.timeLimitPlaceholder' | translate}}" autocomplete="off">
         </mat-form-field>
+        <span class="wizard">
+          <app-wizard-button wizardType="timeline_time"></app-wizard-button>
+        </span>
       </form>
     </div>
   </mat-expansion-panel>
 </div>
 <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
   <div class="example-box" *ngFor="let item of activity.content.items; let index = index" cdkDrag>
-    <button *ngIf="!item" mat-raised-button color="primary" (click)="mediaSelection(index)">Zvoľte obrázok</button>
+    <button *ngIf="!item" mat-raised-button color="primary" (click)="mediaSelection(index)">{{'games.selImg' | translate}}</button>
+    <div *ngIf="item" class="remove">
+      <button  mat-icon-button
+      (click)="removeMedia(index)" aria-label="Example icon button with a home icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
     <img *ngIf="item" class="img-item" [src]="mediaUrl(item)">
   </div>
 </div>

@@ -1,8 +1,12 @@
 <div class="wrapper">
+  <h2>{{title}}</h2>
   <p class="message">
     {{message}}
   </p>
   <p class="button">
-    <button mat-raised-button color="primary" (click)="onAnswer(0)" name="button">Pokračovať</button>
+    <button *ngIf="wizData && wizData.steps && wizData.steps.length == page + 1"
+    mat-raised-button color="primary" (click)="onAnswer()" name="button">{{'wiz.close' | translate}}</button>
+    <button *ngIf="wizData && wizData.steps && wizData.steps.length != page + 1"
+    mat-raised-button color="primary" (click)="onAnswer()" name="button">{{'wiz.next' | translate}}</button>
   </p>
 </div>

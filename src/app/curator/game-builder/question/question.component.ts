@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Globals } from "src/app/globals";
 import { MatDialog } from "@angular/material";
 import { ContentService } from "src/app/content.service";
@@ -13,6 +13,8 @@ import { FormControl } from "@angular/forms";
 export class QuestionComponent implements OnInit {
   @Input() question = null;
   @Input() index = 0;
+
+  @Output() removeEvent = new EventEmitter<number>();
 
   questionFormControl = new FormControl();
   explanationFormControl = new FormControl();
@@ -71,5 +73,12 @@ export class QuestionComponent implements OnInit {
 
   mediaUrl(assetId) {
     return this.contentService.API + 'assets/' + assetId + '/media'
+  }
+  remove(index) {
+    this.removeEvent.emit(index);
+  }
+
+  removeMedia() {
+    this.question.img = null
   }
 }

@@ -104,4 +104,12 @@ export class LocateOnImgActComponent implements OnInit {
     })
   }
 
+  remove(index) {
+    this.activity.content.pois.splice(index, 1);
+  }
+
+  removeMedia() {
+    this.activity.content.asset = null;
+  }
+
 }

@@ -1,5 +1,8 @@
 <div *ngIf="!assets.length" class="empty-library">
-  <h1>Momentálne nemáte dostupné žiadné položky v Mediálnej knižnici. Kliknite na tlačidlo + a vložte nový obsah.</h1>
+  <h1>{{'media.none' | translate}}</h1>
+  <span class="wizard">
+    <app-wizard-button wizardType="asset_library"></app-wizard-button>
+  </span>
 </div>
 <div class="container">
   <ng-container class="container-asset" *ngFor="let asset of assets">
@@ -9,10 +12,10 @@
       >{{asset.metadata.title}}</mat-card-title>
       <div class="cover-img"
       [ngStyle]="{backgroundImage: bgMmediaUrl(asset)}">
-        <div class="cover-view">
-          <button mat-raised-button color="primary" disabled>Zobraziť</button>
+        <!-- <div class="cover-view">
+          <button mat-raised-button color="primary" disabled>Zobraziť</button> -->
           <!-- <button mat-raised-button color="primary"  (click)="view(asset)">Zobraziť</button> -->
-        </div>
+        <!-- </div> -->
       </div>
       <mat-card-content class="card-content">
         <p>
@@ -21,8 +24,8 @@
       </mat-card-content>
       <mat-card-actions>
         <!-- <button mat-button (click)="edit(asset)">Upraviť</button> -->
-        <button mat-button disabled>Upraviť</button>
-        <button mat-button (click)="delete(asset)">Odstrániť</button>
+        <button mat-button (click)="edit(asset)">{{'media.edit' | translate}}</button>
+        <button mat-button (click)="delete(asset)">{{'media.remove' | translate}}</button>
       </mat-card-actions>
     </mat-card>
   </ng-container>

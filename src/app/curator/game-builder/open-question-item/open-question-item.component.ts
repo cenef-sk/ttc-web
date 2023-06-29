@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from "@angular/forms";
 import { Globals } from "src/app/globals";
 import { MatDialog } from "@angular/material";
@@ -13,6 +13,8 @@ import { DialogMediaComponent } from "src/app/dialogs/dialog-media/dialog-media.
 export class OpenQuestionItemComponent implements OnInit {
   @Input() question = null;
   @Input() index = 0;
+
+  @Output() removeEvent = new EventEmitter<number>();
 
   questionFormControl = new FormControl();
   explanationFormControl = new FormControl();
@@ -50,5 +52,12 @@ export class OpenQuestionItemComponent implements OnInit {
 
   mediaUrl(assetId) {
     return this.contentService.API + 'assets/' + assetId + '/media'
+  }
+  remove(index) {
+    this.removeEvent.emit(index);
+  }
+
+  removeMedia() {
+    this.question.img = null
   }
 }

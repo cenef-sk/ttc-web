@@ -76,4 +76,8 @@ export class TimelineActComponent implements OnInit {
     mediaUrl(assetId) {
       return this.contentService.API + 'assets/' + assetId + '/media'
     }
+
+    removeMedia(index) {
+      this.activity.content.items[index] = null;
+    }
 }

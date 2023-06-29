@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { Globals } from "src/app/globals";
 import { MatDialog } from "@angular/material";
 import { ContentService } from "src/app/content.service";
@@ -40,4 +40,7 @@ export class OpenQuestionComponent implements OnInit {
       explanation: ""
     })
   }
+  remove(index) {
+    this.activity.content.questions.splice(index, 1);
+  }    
 }

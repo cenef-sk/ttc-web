@@ -6,22 +6,28 @@
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Aktivita pexeso
+          {{'games.actMemory' | translate}}
         </mat-panel-title>
         <mat-panel-description>
-          Počet vytovrených párov {{activity.content.pairs.length}}/6
+          {{'games.actNrPairs' | translate}} {{activity.content.pairs.length}}/6
         </mat-panel-description>
       </mat-expansion-panel-header>
       <app-activity-pass [config]="activity.config"></app-activity-pass>
       <form class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Časové obmedzenie (v sekundách)</mat-label>
-          <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
+          <mat-label>{{'games.timeLimit' | translate}}</mat-label>
+          <input matInput [formControl]="timeFormControl" placeholder="{{'games.timeLimitPlaceholder' | translate}}" autocomplete="off">
         </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
+        <span class="wizard">
+          <app-wizard-button wizardType="mem_pair_time"></app-wizard-button>
+        </span>
+        <!-- <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Maximálny počet pokusov</mat-label>
           <input matInput [formControl]="maxTriesFormControl" placeholder="Napr. 10" autocomplete="off">
-        </mat-form-field>
+        </mat-form-field> -->
+        <!-- <span class="wizard">
+          <app-wizard-button wizardType="max_tries"></app-wizard-button>
+        </span> -->
       </form>
     </mat-expansion-panel>
     <app-pair [pair]="pair" [index]="index"
@@ -29,8 +35,12 @@
 
   </mat-accordion>
 
-  <div class="centered">
-    <button *ngIf="activity.content.pairs.length <6"
-    mat-raised-button color="primary" (click)="add()">Pridaj nový pár</button>
+  <div class="centered" *ngIf="activity.content.pairs.length <6">
+    <button
+    class="action-button"
+    mat-raised-button color="primary" (click)="add()">{{'games.newPair' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="mem_pair"></app-wizard-button>
+    </span>
   </div>
 </div>

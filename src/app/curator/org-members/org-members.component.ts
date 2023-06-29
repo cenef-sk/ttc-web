@@ -65,7 +65,6 @@ export class OrgMembersComponent implements OnInit {
   }
 
   isAdmin() {
-    //TODO check why it does not work all the time
     return (this.globals.org.role=="Admin")
   }
 

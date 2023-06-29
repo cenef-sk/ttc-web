@@ -20,6 +20,10 @@
   text-align: center;
 }
 
+.centered2 {
+  padding-top: 30px;
+  text-align: center;
+}
 .example-button-container {
   display: inline;
   margin-left: 20px;
@@ -52,6 +56,34 @@
 }
 
 .action-button {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 25px;
+  margin-right: 5px;
+}
+
+/* .field-wrapper {
+  position: relative;
+} */
+.wizard {
+  /* text-align: right; */
+  position: absolute;
+  margin-left: 10px;
+  /* top: -80px;
+  right: -60px; */
+  /* float: right; */
+  /* display: inline;
+  spacing-top: 20px; */
+}
+
+.wizard-btn {
+  display: inline-block;
+
+  /* position: relative;
+  text-align: center; */
+}
+
+.done-icon {
+  color: green;
+}
+.missing-icon {
+  color: red;
 }

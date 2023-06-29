@@ -21,7 +21,13 @@
 }
 .empty-library {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 90px;
+  width: 70%;
+  margin: auto;
+}
+
+.wizard {
+  display: inline-block;
 }
 
 .card-header {

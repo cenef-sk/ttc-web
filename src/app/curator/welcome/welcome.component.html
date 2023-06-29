@@ -1,28 +1,22 @@
 <mat-card class="teacher-welcome">
-  <h1>Vítame vás v zóne kurátor</h1>
+  <h1>{{'welcome.text1' | translate}}</h1>
   <p class="t-intro">
-    Táto zóna je určená pre kurátorov a tvorcov obsahu, ktorí chcú túto interaktívnu aplikáciu využiť na prezentáciu a propagáciu kultúry a umenia zábavnou a vzdelávacou formou.
+    {{'welcome.text2' | translate}}
   </p>
   <p class="t-intro">
-    Aby ste mohli začať pracovať s aplikáciou je potrebné aby ste si vytvorili organizáciu alebo požiadali o členstvo v už existujúcej organizácii.
+    {{'welcome.text3' | translate}}
   </p>
   <p class="t-intro">
-    Metodické odporúčania pri tvorbe obsahu získate po kliknutí na ikonku
-     <b>Interaktívny pomocník</b>
+    {{'welcome.text4' | translate}}
+     <b>{{'welcome.text5' | translate}}</b>
      <span class="wizard">
        <app-wizard-button wizardType="welcome"></app-wizard-button>
      </span>
  </p>
  <p class="t-intro">
-   Spôsob a možnosti návrhu hry môžeme zhrnúť v nasledujúcom diagrame:
+   {{'welcome.text6' | translate}}
  </p>
  <p>
-   <img src="/assets/cyklus_navrh_hry.png" width="100%">
+   <img [src]="'curator.welcome.design' | translate" width="100%">
  </p>
-  <!-- <h3>Nasledujúce kroky vám ukážu, ako jednoducho využiť interaktívnu vzdelávaciu aplikáciu vo vyučovacom procese:</h3>
-  <h3>1. Vytvorte si novu tému v sekcii "Moje témy"</h3>
-  <h3>2. Vytvorením témy zároveň vytvoríte pracovnú skupinu, v ktorej budu účastníci/študenti pracovať</h3>
-  <h3>3. Zdieľajte kód pracovnej skupiny s respondentmi</h3>
-  <h3>4. Vaši účastníci/študenti sa pomocou kódu prihlásia do systému, kde si pomocou interaktívnej aplikácie osvoja proces kritického myslenia a prácu s informáciami</h3>
-  <h3>5. Na záver si môžete pozrieť sumár a prehľady pre danú pracovnú skupinu</h3> -->
 </mat-card>

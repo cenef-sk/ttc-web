@@ -19,3 +19,14 @@
 .example-full-width {
   width: 100%;
 }
+
+.example-margin {
+}
+/deep/ .mat-checkbox-layout {
+  overflow-wrap: break-word;
+  white-space: normal !important;
+}
+
+/deep/ .mat-checkbox-layout button{
+  display: block;
+}

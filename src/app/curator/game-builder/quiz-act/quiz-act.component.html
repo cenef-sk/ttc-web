@@ -6,26 +6,33 @@
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Aktivita kvíz
+          {{'games.quiz' | translate}}
         </mat-panel-title>
         <mat-panel-description>
-          Základné nastavenia aktivity
+          {{'games.actBasic' | translate}}
         </mat-panel-description>
       </mat-expansion-panel-header>
       <app-activity-pass [config]="activity.config"></app-activity-pass>
       <form class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
+        <!-- <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Časové obmedzenie (v sekundách)</mat-label>
           <input matInput [formControl]="timeFormControl" placeholder="Napr. 30" autocomplete="off">
         </mat-form-field>
+        <span class="wizard">
+          <app-wizard-button wizardType="quiz_time"></app-wizard-button>
+        </span> -->
       </form>
     </mat-expansion-panel>
     <app-question [question]="question" [index]="index"
+    (removeEvent)="remove($event)"
     *ngFor="let question of activity.content.questions; let index = index"></app-question>
 
   </mat-accordion>
 
   <div class="centered">
-    <button mat-raised-button color="primary" (click)="add()">Pridaj novú otázku</button>
+    <button mat-raised-button class="action-button" color="primary" (click)="add()">{{'games.newQuestion' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="quiz"></app-wizard-button>
+    </span>
   </div>
 </div>

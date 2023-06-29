@@ -6,7 +6,6 @@ import { DialogTermsComponent } from '../../dialogs/dialog-terms/dialog-terms.co
 import { DialogAboutComponent } from '../../dialogs/dialog-about/dialog-about.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { CookiesConsentComponent } from "../cookies-consent/cookies-consent.component";
-import { SharedService } from "src/app/shared.service";
 
 @Component({
   selector: 'app-default-layout',
@@ -25,12 +24,10 @@ export class DefaultLayoutComponent implements OnInit {
     private translate: TranslateService,
     public dialog: MatDialog,
     private snackBar: MatSnackBar,
-    public sharedService: SharedService,
     @Inject('LOCALSTORAGE') public local,
     @Inject(LOCALE_ID) public locale: string
   ) {
 
-    console.log(sharedService.lngSelector)
     let consent = this.local.getItem('consent');
     if (!consent) {
       this.snackBar.openFromComponent(CookiesConsentComponent);
@@ -50,7 +47,6 @@ export class DefaultLayoutComponent implements OnInit {
     } else {
       this.setLanguage(savedLocale);
     }
-    sharedService.setLng(translate.currentLang)
   }
 
   ngOnInit() {
@@ -60,7 +56,6 @@ export class DefaultLayoutComponent implements OnInit {
     this.language = language;
     this.translate.use(language);
     this.local.setItem('locale', language)
-    this.sharedService.setLng(this.translate.currentLang)
   }
 
   openDialogAbout() {

@@ -1,14 +1,23 @@
 <form class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Ako získať heslo pre vstup do aktivity</mat-label>
-    <input matInput [formControl]="inPassDescFormControl" placeholder="Napr. Koľko je okien na budove divadla?" autocomplete="off">
+    <mat-label>{{'games.passHow' | translate}}</mat-label>
+    <input matInput [formControl]="inPassDescFormControl" placeholder="{{'games.passHowPlaceholder' | translate}}" autocomplete="off">
   </mat-form-field>
+  <span class="wizard">
+    <app-wizard-button wizardType="pass_how"></app-wizard-button>
+  </span>
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Heslo pre vstup do aktivity</mat-label>
-    <input matInput [formControl]="inPassFormControl" placeholder="Napr. prilba" autocomplete="off">
+    <mat-label>{{'games.passIn' | translate}}</mat-label>
+    <input matInput [formControl]="inPassFormControl" placeholder="{{'games.passInPlaceholder' | translate}}" autocomplete="off">
   </mat-form-field>
+  <span class="wizard">
+    <app-wizard-button wizardType="pass_in"></app-wizard-button>
+  </span>
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Získane heslo po úspešnej aktivite</mat-label>
-    <input matInput [formControl]="outPassFormControl" placeholder="Napr. H" autocomplete="off">
+    <mat-label>{{'games.passOut' | translate}}</mat-label>
+    <input matInput [formControl]="outPassFormControl" placeholder="{{'games.passOutPlaceholder' | translate}}" autocomplete="off">
   </mat-form-field>
+  <span class="wizard">
+    <app-wizard-button wizardType="pass_out"></app-wizard-button>
+  </span>
 </form>

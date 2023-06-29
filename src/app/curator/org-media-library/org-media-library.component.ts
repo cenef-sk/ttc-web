@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContentService } from "src/app/content.service";
 import { Globals } from "src/app/globals";
 import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-org-media-library',
@@ -15,6 +16,7 @@ export class OrgMediaLibraryComponent implements OnInit {
     private globals: Globals,
     public contentService: ContentService,
     private router: Router,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -30,7 +32,6 @@ export class OrgMediaLibraryComponent implements OnInit {
     this.router.navigate(['/curator/new-media-asset']);
   }
   edit(asset){
-    //TODO
     this.router.navigate(['/curator/edit-media-asset', asset._id]);
   }
   view(asset){
@@ -43,7 +44,7 @@ export class OrgMediaLibraryComponent implements OnInit {
       if (res.success) {
         this.deleteAsset(assetId)
       } else {
-        alert("Položku sa nepodarilo vymazať.")
+        alert(this.translate.instant('media.removeProblem'))
       }
     })
   }
@@ -52,21 +53,37 @@ export class OrgMediaLibraryComponent implements OnInit {
     this.contentService.deleteAsset(assetId).subscribe((res) => {
       if (res.success) {
         this.loadAssets();
-        alert("Prebehlo úspešne vymazanie.")
+        alert(this.translate.instant('media.removed'))
       }
     })
   }
 
+
   delete(asset) {
-    if (confirm("Naozaj chcete túto položku zmazať?")) {
-      console.log(asset)
-      if (asset.mediaContent) {
-        this.deleteMediaAndAsset(asset._id);
-      } else {
-        this.deleteAsset(asset._id);
-      }
+    if (confirm(this.translate.instant('media.confirmRemove'))) {
+      this.contentService.isUsedAsset(asset._id).subscribe((res) => {
+        if (res.success) {
+          if (res.data.length) {
+            let games = res.data.map(g => {
+              if (g.game) {
+                return g.name + " - publikovaná"
+              } else {
+                return g.name
+              }
+            }).join(", ")
+            alert(this.translate.instant('media.unableToDelete') + games)
+          } else {
+            if (asset.mediaContent) {
+              this.deleteMediaAndAsset(asset._id);
+            } else {
+              this.deleteAsset(asset._id);
+            }
+          }
+        }
+      })
     }
   }
+
   mediaUrl(asset) {
     if (asset.mediaContent) {
       return this.contentService.API + 'assets/' + asset._id + '/media'

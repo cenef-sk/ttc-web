@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Globals } from "src/app/globals";
 import { ContentService } from "src/app/content.service";
 import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-orgs-management',
@@ -16,6 +17,7 @@ export class OrgsManagementComponent implements OnInit {
     private globals: Globals,
     public contentService: ContentService,
     private router: Router,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -29,17 +31,19 @@ export class OrgsManagementComponent implements OnInit {
     const userId = this.globals.user._id;
     const member = org.members.find((member) => (member.user == userId));
     if (member.role == "Admin") {
-      return "Administrátor"
+      return this.translate.get('org.admin')
+      // return "Administrátor"
     } else {
-      return "Člen"
+      return this.translate.get('org.member')
+      // return "Člen"
     }
   }
 
   delete(org) {
-    if (confirm("Naozaj chcete túto organizáciu odstániť?")) {
+    if (confirm(this.translate.instant('org.confirmRemove'))) {
       this.contentService.deleteOrg(org._id).subscribe((res) => {
         if (res.success) {
-          alert("Odstánenie prebehlo úspešne.")
+          alert(this.translate.instant('org.removed'))
           this.reload();
         }
       })

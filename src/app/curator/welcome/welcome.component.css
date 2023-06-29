@@ -15,10 +15,6 @@
 }
 
 .wizard {
-  text-align: right;
-  position: relative;
-  top: -50px;
-  /* float: right; */
-  display: inline;
-  spacing-top: 20px;
+  display: inline-block;
+  margin-left: 20px;
 }

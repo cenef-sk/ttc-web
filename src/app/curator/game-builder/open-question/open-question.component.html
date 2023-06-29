@@ -3,10 +3,10 @@
     <mat-expansion-panel [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Aktivita otvorená otázka
+          {{'games.actOpenQuestion' | translate}}
         </mat-panel-title>
         <mat-panel-description>
-          Základné nastavenia aktivity
+          {{'games.actBasic' | translate}}
         </mat-panel-description>
       </mat-expansion-panel-header>
       <app-activity-pass [config]="activity.config"></app-activity-pass>
@@ -18,11 +18,15 @@
       </form> -->
     </mat-expansion-panel>
     <app-open-question-item [question]="question" [index]="index"
+    (removeEvent)="remove($event)"
     *ngFor="let question of activity.content.questions; let index = index"></app-open-question-item>
 
   </mat-accordion>
 
   <div class="centered">
-    <button mat-raised-button color="primary" (click)="add()">Pridaj novú otázku</button>
+    <button mat-raised-button class="action-button" color="primary" (click)="add()">{{'games.newQuestion' | translate}}</button>
+    <span class="wizard-btn">
+      <app-wizard-button wizardType="quiz"></app-wizard-button>
+    </span>
   </div>
 </div>

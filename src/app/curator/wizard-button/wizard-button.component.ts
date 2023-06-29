@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DialogWizardComponent } from "src/app/dialogs/dialog-wizard/dialog-wizard.component";
-import { SmartStoryEngine } from 'smartstoryengine/dist/app/SmartStoryEngine';
 import { MatDialog } from "@angular/material";
 
 
@@ -20,13 +19,14 @@ export class WizardButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  openWizard() {
+  openWizard(event) {
+    event.stopPropagation();
     this.dialog.open(DialogWizardComponent, {
       width: '500px',
-      height: '300px',
+      height: '350px',
       data: {
         wizardType: this.wizardType,
-        finalize: (engine: SmartStoryEngine) => {
+        finalize: () => {
           console.log("WIZARD DONE")
         }
       }
